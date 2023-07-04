@@ -1,0 +1,3 @@
+baselines/example.ckpt
+baselines/MNIST
+baselines/lightning_logs
