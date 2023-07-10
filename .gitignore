@@ -1,0 +1,3 @@
+baselines/test_checkpoints
+baselines/MNIST
+baselines/lightning_logs
