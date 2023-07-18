@@ -1,3 +1,5 @@
+defaults:
+  - hydra/sweeper: optuna
 data:
   data_dir: "./"
   batch_size: 64
@@ -17,7 +19,7 @@ task:
   lr_scheduler:
     scheduler:
       _target_: "torch.optim.lr_scheduler.CosineAnnealingWarmRestarts"
-      T_0: 50
+      T_0: choice(30, 50, 5)
       T_mult: 2
       verbose: False
 
