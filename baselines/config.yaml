@@ -1,8 +1,41 @@
 data:
   data_dir: "./"
   batch_size: 64
+  pred_batch_size: 32
   train_ratio: 0.6
 
 models:
+  CNNModel:
+    _target_: "__main__.CNNModel"
+    type: small
 
 task:
+  num_classes: 10
+  optimizer:
+    _target_: "torch.optim.AdamW"
+    lr: 2e-5
+  lr_scheduler:
+    scheduler:
+      _target_: "torch.optim.lr_scheduler.CosineAnnealingWarmRestarts"
+      T_0: 50
+      T_mult: 2
+      verbose: False
+
+    interval: epoch
+
+train:
+  callbacks:
+    checkpoint_callback:
+      monitor: "val_avg_acc"
+      dirpath: "test_checkpoints/checkpoints/"
+      filename: "best-model-{epoch:02d}-{val_acc:.2f}"
+      save_top_k: 1
+      mode: "max"
+    early_stop_callback:
+      monitor: "val_avg_acc"
+      min_delta: 0.01
+      patience: 3
+      verbose: False
+      mode: "max"
+
+  max_epochs: 30
