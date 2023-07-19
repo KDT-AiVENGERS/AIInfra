@@ -1,5 +1,7 @@
 defaults:
-  - hydra/sweeper: optuna
+  - override hydra/sweeper: optuna
+
+_target_: hydra_plugins.hydra_optuna_sweeper.optuna_sweeper.OptunaSweeper
 data:
   data_dir: "./"
   batch_size: 64
