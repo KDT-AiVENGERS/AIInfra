@@ -1,10 +1,18 @@
-defaults:
-  - override hydra/sweeper: optuna
+# defaults:
+#   - override hydra/sweeper: optuna
 
-_target_: hydra_plugins.hydra_optuna_sweeper.optuna_sweeper.OptunaSweeper
+# hydra/sweeper/optuna:
+#   optuna_config:
+#     n_trials: 40
+#     direction: maximize
+#     storage: null
+#     study_name: tpe
+#     n_jobs: 1
+#     seed: 123
+
 data:
   data_dir: "./"
-  batch_size: 64
+  batch_size: choice(32, 128, 32)
   pred_batch_size: 32
   train_ratio: 0.6
 
@@ -21,7 +29,7 @@ task:
   lr_scheduler:
     scheduler:
       _target_: "torch.optim.lr_scheduler.CosineAnnealingWarmRestarts"
-      T_0: choice(30, 50, 5)
+      T_0: 50
       T_mult: 2
       verbose: False
 
