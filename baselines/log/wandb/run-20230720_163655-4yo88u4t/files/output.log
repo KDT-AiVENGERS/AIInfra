@@ -1,0 +1,95 @@
+GPU available: True (mps), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name  | Type     | Params
+-----------------------------------
+0 | model | CNNModel | 429 K
+-----------------------------------
+429 K     Trainable params
+0         Non-trainable params
+429 K     Total params
+1.717     Total estimated model params size (MB)
+
+
+
+
+
+
+
+
+Epoch 0: 100%|██████████| 563/563 [00:19<00:00, 29.22it/s, v_num=8u4t, train_acc=0.792, train_loss=0.972]
+
+
+
+Epoch 0, Avg. Training Loss: 1.715, Avg. Training Accuracy: 0.574 Avg. Validation Loss: 0.881, Avg. Validation Accuracy: 0.799
+
+
+
+
+
+
+
+
+
+Epoch 1: 100%|██████████| 563/563 [00:19<00:00, 29.57it/s, v_num=8u4t, train_acc=0.875, train_loss=0.567]
+
+
+
+
+Validation DataLoader 0:  89%|████████▉ | 334/375 [00:08<00:01, 38.23it/s]
+Epoch 1, Avg. Training Loss: 0.603, Avg. Training Accuracy: 0.841 Avg. Validation Loss: 0.476, Avg. Validation Accuracy: 0.874
+Epoch 1: 100%|██████████| 563/563 [00:28<00:00, 19.48it/s, v_num=8u4t, train_acc=0.875, train_loss=0.567]
+
+
+Testing DataLoader 0: 100%|██████████| 157/157 [00:03<00:00, 40.58it/s]
+{'member_name': 'eui-jin', 'data': {'data_dir': './', 'batch_size': 64, 'pred_batch_size': 32, 'train_ratio': 0.6}, 'models': {'CNNModel': {'_target_': '__main__.CNNModel', 'type': 'small'}}, 'task': {'num_classes': 10, 'optimizer': {'_target_': 'torch.optim.AdamW', 'lr': 2e-05}, 'lr_scheduler': {'scheduler': {'_target_': 'torch.optim.lr_scheduler.CosineAnnealingWarmRestarts', 'T_0': 50, 'T_mult': 2, 'verbose': False}, 'interval': 'epoch'}}, 'train': {'callbacks': {'checkpoint_callback': {'monitor': 'val_avg_acc', 'filename': 'best-model-{epoch:02d}-{val_acc:.2f}', 'save_top_k': 1, 'save_last': True, 'mode': 'max'}, 'early_stop_callback': {'monitor': 'val_avg_acc', 'min_delta': 0.01, 'patience': 3, 'verbose': False, 'mode': 'max'}}, 'logger': {'_target_': 'pytorch_lightning.loggers.WandbLogger', 'save_dir': 'log', 'project': 'wandb_test'}, 'max_epochs': 2}}
+<class 'omegaconf.dictconfig.DictConfig'>
+{'member_name': 'eui-jin', 'data': {'data_dir': './', 'batch_size': 64, 'pred_batch_size': 32, 'train_ratio': 0.6}, 'models': {'CNNModel': {'_target_': '__main__.CNNModel', 'type': 'small'}}, 'task': {'num_classes': 10, 'optimizer': {'_target_': 'torch.optim.AdamW', 'lr': 2e-05}, 'lr_scheduler': {'scheduler': {'_target_': 'torch.optim.lr_scheduler.CosineAnnealingWarmRestarts', 'T_0': 50, 'T_mult': 2, 'verbose': False}, 'interval': 'epoch'}}, 'train': {'callbacks': {'checkpoint_callback': {'monitor': 'val_avg_acc', 'filename': 'best-model-{epoch:02d}-{val_acc:.2f}', 'save_top_k': 1, 'save_last': True, 'mode': 'max'}, 'early_stop_callback': {'monitor': 'val_avg_acc', 'min_delta': 0.01, 'patience': 3, 'verbose': False, 'mode': 'max'}}, 'logger': {'_target_': 'pytorch_lightning.loggers.WandbLogger', 'save_dir': 'log', 'project': 'wandb_test'}, 'max_epochs': 2}}
+<class 'dict'>
+GPU available: True (mps), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name  | Type     | Params
+-----------------------------------
+0 | model | CNNModel | 429 K
+-----------------------------------
+429 K     Trainable params
+0         Non-trainable params
+429 K     Total params
+1.717     Total estimated model params size (MB)
+
+
+
+
+
+
+
+
+
+Epoch 0: 100%|██████████| 563/563 [00:19<00:00, 28.25it/s, v_num=8u4t, train_acc=0.679, train_loss=1.110]
+
+
+
+Epoch 0, Avg. Training Loss: 1.833, Avg. Training Accuracy: 0.486 Avg. Validation Loss: 1.082, Avg. Validation Accuracy: 0.733
+
+
+
+
+
+
+
+
+
+Epoch 1: 100%|██████████| 563/563 [00:19<00:00, 28.71it/s, v_num=8u4t, train_acc=0.875, train_loss=0.652]
+
+
+
+
+Validation DataLoader 0:  86%|████████▋ | 324/375 [00:08<00:01, 37.69it/s]
+Epoch 1, Avg. Training Loss: 0.738, Avg. Training Accuracy: 0.804 Avg. Validation Loss: 0.551, Avg. Validation Accuracy: 0.846
+Epoch 1: 100%|██████████| 563/563 [00:29<00:00, 18.97it/s, v_num=8u4t, train_acc=0.875, train_loss=0.652]
+
+
+Testing DataLoader 0: 100%|██████████| 157/157 [00:03<00:00, 39.31it/s]

@@ -10,9 +10,11 @@
 #     n_jobs: 1
 #     seed: 123
 
+member_name: eui-jin
+
 data:
   data_dir: "./"
-  batch_size: choice(32, 128, 32)
+  batch_size: 64
   pred_batch_size: 32
   train_ratio: 0.6
 
@@ -39,9 +41,10 @@ train:
   callbacks:
     checkpoint_callback:
       monitor: "val_avg_acc"
-      dirpath: "test_checkpoints/checkpoints/"
+      # dirpath: "checkpoints/checkpoints/"
       filename: "best-model-{epoch:02d}-{val_acc:.2f}"
       save_top_k: 1
+      save_last: True
       mode: "max"
     early_stop_callback:
       monitor: "val_avg_acc"
@@ -50,4 +53,15 @@ train:
       verbose: False
       mode: "max"
 
-  max_epochs: 30
+  logger:
+    # ----- tensorboard -----
+    # _target_: pytorch_lightning.loggers.TensorBoardLogger
+    # save_dir: tb_logs
+    # name: my_model
+    # ----- Wandb -----
+    _target_: pytorch_lightning.loggers.WandbLogger
+    save_dir: log
+    # name: my_model_5
+    project: wandb_test
+
+  max_epochs: 2

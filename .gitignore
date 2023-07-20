@@ -2,3 +2,4 @@ baselines/test_checkpoints
 baselines/MNIST
 baselines/lightning_logs
 data/
+**/private_config.yaml
