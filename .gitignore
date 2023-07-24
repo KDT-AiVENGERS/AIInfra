@@ -1,5 +1,5 @@
-baselines/test_checkpoints
+baselines/checkpoints
 baselines/MNIST
-baselines/lightning_logs
+baselines/logs
 data/
-**/private_config.yaml
+

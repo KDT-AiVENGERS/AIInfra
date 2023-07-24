@@ -1,15 +1,3 @@
-# defaults:
-#   - override hydra/sweeper: optuna
-
-# hydra/sweeper/optuna:
-#   optuna_config:
-#     n_trials: 40
-#     direction: maximize
-#     storage: null
-#     study_name: tpe
-#     n_jobs: 1
-#     seed: 123
-
 member_name: eui-jin
 
 data:
@@ -61,7 +49,20 @@ train:
     # ----- Wandb -----
     _target_: pytorch_lightning.loggers.WandbLogger
     save_dir: log
-    # name: my_model_5
     project: wandb_test
+    # name: my_model_5 -> 해당 실험에 특정 이름을 부여하고 싶으면 활성화
 
   max_epochs: 2
+
+sweep:
+  method: "bayes"
+  metric:
+    name: "val_avg_acc"
+    goal: "maximize"
+  parameters:
+    batch_size:
+      values: [16, 32, 64]
+  early_terminate:
+    type: "hyperband"
+    min_iter: 1
+  run_cap: 2

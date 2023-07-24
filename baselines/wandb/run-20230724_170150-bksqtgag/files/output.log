@@ -1,0 +1,74 @@
+
+Epoch 0:   4%|▍         | 48/1125 [00:01<00:36, 29.48it/s, v_num=tgag, train_acc=0.133, train_loss=2.290]
+GPU available: True (mps), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name  | Type     | Params
+-----------------------------------
+0 | model | CNNModel | 429 K
+-----------------------------------
+429 K     Trainable params
+0         Non-trainable params
+429 K     Total params
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 0: 100%|██████████| 1125/1125 [00:36<00:00, 30.61it/s, v_num=tgag, train_acc=0.777, train_loss=0.537]
+
+
+
+
+
+
+
+
+Epoch 0, Avg. Training Loss: 1.380, Avg. Training Accuracy: 0.642 Avg. Validation Loss: 0.578, Avg. Validation Accuracy: 0.808
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 1: 100%|██████████| 1125/1125 [00:36<00:00, 31.18it/s, v_num=tgag, train_acc=0.860, train_loss=0.292]
+
+
+
+
+
+
+
+
+Validation DataLoader 0:  94%|█████████▍| 707/750 [00:16<00:01, 41.71it/s]
+Epoch 1, Avg. Training Loss: 0.430, Avg. Training Accuracy: 0.846 Avg. Validation Loss: 0.362, Avg. Validation Accuracy: 0.858
+Epoch 1: 100%|██████████| 1125/1125 [00:54<00:00, 20.76it/s, v_num=tgag, train_acc=0.860, train_loss=0.292]
+
+
+
+
+Testing DataLoader 0: 100%|██████████| 313/313 [00:07<00:00, 43.84it/s]
