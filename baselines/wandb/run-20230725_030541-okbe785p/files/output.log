@@ -1,0 +1,6 @@
+data
+{'data_dir': './', 'batch_size': 64, 'pred_batch_size': 32, 'train_ratio': 0.6}
+Error in callback <function _WandbInit._resume_backend at 0x2b11e7010> (for pre_run_cell):
+Create sweep with ID: u58p4ovk
+Sweep URL: https://wandb.ai/suwon-pabby/sweep-test/sweeps/u58p4ovk
+[34m[1mwandb[39m[22m: [33mWARNING[39m Calling wandb.login() after wandb.init() has no effect.

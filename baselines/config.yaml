@@ -1,4 +1,4 @@
-member_name: eui-jin
+# member_name: eui-jin
 
 data:
   data_dir: "./"
@@ -61,8 +61,10 @@ sweep:
     goal: "maximize"
   parameters:
     batch_size:
-      values: [16, 32, 64]
+      values: [32, 64, 128]
+    type:
+      values: ["small", "large"]
   early_terminate:
     type: "hyperband"
-    min_iter: 1
-  run_cap: 2
+    min_iter: 3
+  run_cap: 15

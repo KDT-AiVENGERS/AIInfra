@@ -3,12 +3,14 @@ data:
   data_dir: ./
   pred_batch_size: 32
   train_ratio: 0.6
-member_name: eui-jin
 models:
   CNNModel:
     _target_: __main__.CNNModel
     type: small
 sweep:
+  early_terminate:
+    min_iter: 3
+    type: hyperband
   method: bayes
   metric:
     goal: maximize
@@ -16,9 +18,14 @@ sweep:
   parameters:
     batch_size:
       values:
-      - 16
       - 32
       - 64
+      - 128
+    type:
+      values:
+      - small
+      - large
+  run_cap: 15
 task:
   lr_scheduler:
     interval: epoch
