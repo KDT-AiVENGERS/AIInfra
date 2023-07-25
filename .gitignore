@@ -1,5 +1,5 @@
 baselines/checkpoints
 baselines/MNIST
-baselines/logs
+baselines/log
 data/
 
