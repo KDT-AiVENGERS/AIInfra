@@ -1,0 +1,48 @@
+GPU available: True (mps), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name  | Type     | Params
+-----------------------------------
+0 | model | CNNModel | 429 K
+-----------------------------------
+429 K     Trainable params
+0         Non-trainable params
+429 K     Total params
+1.717     Total estimated model params size (MB)
+
+
+
+
+
+
+
+
+
+Epoch 0: 100%|██████████| 563/563 [00:20<00:00, 27.89it/s, v_num=bkje, train_acc=0.710, train_loss=1.040]
+
+
+
+
+Epoch 0, Avg. Training Loss: 1.889, Avg. Training Accuracy: 0.486 Avg. Validation Loss: 1.134, Avg. Validation Accuracy: 0.736
+
+
+
+
+
+
+
+
+
+Epoch 1: 100%|██████████| 563/563 [00:21<00:00, 26.58it/s, v_num=bkje, train_acc=0.967, train_loss=0.448]
+
+
+
+
+
+Validation DataLoader 0: 100%|█████████▉| 374/375 [00:10<00:00, 36.89it/s]
+Epoch 1, Avg. Training Loss: 0.764, Avg. Training Accuracy: 0.800 Avg. Validation Loss: 0.565, Avg. Validation Accuracy: 0.844
+Epoch 1: 100%|██████████| 563/563 [00:31<00:00, 17.90it/s, v_num=bkje, train_acc=0.967, train_loss=0.448]
+
+
+Testing DataLoader 0: 100%|██████████| 157/157 [00:04<00:00, 38.98it/s]

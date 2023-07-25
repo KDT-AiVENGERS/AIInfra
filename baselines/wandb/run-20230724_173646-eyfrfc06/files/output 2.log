@@ -1,0 +1,8 @@
+⭐️
+batch_size
+32
+{'batch_size': 32}
+wandb: Network error (ConnectionError), entering retry loop.
+[34m[1mwandb[39m[22m: [33mWARNING[39m Calling wandb.login() after wandb.init() has no effect.
+Create sweep with ID: 0g6tyakb
+Sweep URL: https://wandb.ai/suwon-pabby/sweep-test/sweeps/0g6tyakb

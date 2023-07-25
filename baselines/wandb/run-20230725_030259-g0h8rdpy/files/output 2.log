@@ -1,0 +1,6 @@
+⭐️
+<class 'str'>
+Error in callback <function _WandbInit._resume_backend at 0x2a4ede170> (for pre_run_cell):
+Create sweep with ID: bgeh9rni
+Sweep URL: https://wandb.ai/suwon-pabby/sweep-test/sweeps/bgeh9rni
+[34m[1mwandb[39m[22m: [33mWARNING[39m Calling wandb.login() after wandb.init() has no effect.

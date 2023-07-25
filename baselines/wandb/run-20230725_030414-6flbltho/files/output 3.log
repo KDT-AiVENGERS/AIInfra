@@ -1,0 +1,55 @@
+member_name
+eui-jin
+Exception in thread NetStatThr:
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 255, in check_network_status
+Exception in thread ChkStopThr:
+    Traceback (most recent call last):
+self._loop_check_status(  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 211, in _loop_check_status
+    self.run()
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/threading.py", line 953, in run
+    local_handle = request()
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/interface/interface.py", line 795, in deliver_network_status
+    return self._deliver_network_status(status)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/interface/interface_shared.py", line 601, in _deliver_network_status
+        return self._deliver_record(record)self._target(*self._args, **self._kwargs)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/interface/interface_shared.py", line 560, in _deliver_record
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 273, in check_stop_status
+    handle = mailbox._deliver_record(record, interface=self)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/lib/mailbox.py", line 455, in _deliver_record
+    interface._publish(record)
+self._loop_check_status(  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/interface/interface_sock.py", line 51, in _publish
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 211, in _loop_check_status
+    self._sock_client.send_record_publish(record)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/lib/sock_client.py", line 221, in send_record_publish
+    local_handle = request()
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/interface/interface.py", line 787, in deliver_stop_status
+    self.send_server_request(server_req)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/lib/sock_client.py", line 155, in send_server_request
+    self._send_message(msg)
+return self._deliver_stop_status(status)  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/lib/sock_client.py", line 152, in _send_message
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/interface/interface_shared.py", line 585, in _deliver_stop_status
+    self._sendall_with_error_handle(header + data)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/lib/sock_client.py", line 130, in _sendall_with_error_handle
+    return self._deliver_record(record)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/interface/interface_shared.py", line 560, in _deliver_record
+    handle = mailbox._deliver_record(record, interface=self)
+sent = self._sock.send(data)  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/lib/mailbox.py", line 455, in _deliver_record
+BrokenPipeError: [Errno 32] Broken pipe
+    interface._publish(record)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/interface/interface_sock.py", line 51, in _publish
+    self._sock_client.send_record_publish(record)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/lib/sock_client.py", line 221, in send_record_publish
+    self.send_server_request(server_req)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/lib/sock_client.py", line 155, in send_server_request
+    self._send_message(msg)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/lib/sock_client.py", line 152, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/infra/lib/python3.10/site-packages/wandb/sdk/lib/sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+BrokenPipeError: [Errno 32] Broken pipe

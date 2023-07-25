@@ -1,0 +1,33 @@
+{
+    "os": "macOS-13.4.1-arm64-arm-64bit",
+    "python": "3.10.12",
+    "heartbeatAt": "2023-07-25T01:54:01.871608",
+    "startedAt": "2023-07-25T01:54:01.132399",
+    "docker": null,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/KDT-AiVENGERS/AIInfra",
+        "commit": "4ddacdb68ff8f0fc09895577e87460ed32acb97f"
+    },
+    "email": "leeuj9663@naver.com",
+    "root": "/Users/lee/Desktop/\u110b\u1175\u110b\u1174\u110c\u1175\u11ab/Programmers/finalProject/AIInfra",
+    "host": "iuijin-ui-MacBookPro.local",
+    "username": "lee",
+    "executable": "/opt/homebrew/Caskroom/miniconda/base/envs/infra/bin/python",
+    "cpu_count": 10,
+    "cpu_count_logical": 10,
+    "disk": {
+        "total": 460.4317207336426,
+        "used": 8.43935775756836
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 32.0
+    }
+}

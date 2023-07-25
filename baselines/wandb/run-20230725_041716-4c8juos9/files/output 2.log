@@ -1,0 +1,74 @@
+GPU available: True (mps), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name  | Type     | Params
+-----------------------------------
+0 | model | CNNModel | 886 K
+-----------------------------------
+886 K     Trainable params
+0         Non-trainable params
+886 K     Total params
+3.545     Total estimated model params size (MB)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 0: 100%|██████████| 1125/1125 [00:37<00:00, 30.09it/s, v_num=uos9, train_acc=0.727, train_loss=0.356]
+
+
+
+
+
+
+
+
+
+Epoch 0, Avg. Training Loss: 1.085, Avg. Training Accuracy: 0.684 Avg. Validation Loss: 0.464, Avg. Validation Accuracy: 0.834
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 1: 100%|██████████| 1125/1125 [00:36<00:00, 30.56it/s, v_num=uos9, train_acc=0.727, train_loss=0.220]
+
+
+
+
+
+
+
+
+Validation DataLoader 0:  93%|█████████▎| 700/750 [00:17<00:01, 40.53it/s]
+Epoch 1, Avg. Training Loss: 0.368, Avg. Training Accuracy: 0.861 Avg. Validation Loss: 0.309, Avg. Validation Accuracy: 0.877
+Epoch 1: 100%|██████████| 1125/1125 [00:55<00:00, 20.26it/s, v_num=uos9, train_acc=0.727, train_loss=0.220]
+
+
+
+
+Testing DataLoader 0: 100%|██████████| 313/313 [00:07<00:00, 42.35it/s]

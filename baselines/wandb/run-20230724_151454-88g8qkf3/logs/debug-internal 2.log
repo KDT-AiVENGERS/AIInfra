@@ -1,0 +1,357 @@
+2023-07-24 15:14:54,643 INFO    StreamThr :73536 [internal.py:wandb_internal():86] W&B internal server running at pid: 73536, started at: 2023-07-24 15:14:54.642739
+2023-07-24 15:14:54,643 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: status
+2023-07-24 15:14:54,650 INFO    WriterThread:73536 [datastore.py:open_for_write():85] open: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/run-88g8qkf3.wandb
+2023-07-24 15:14:54,651 DEBUG   SenderThread:73536 [sender.py:send():369] send: header
+2023-07-24 15:14:54,693 DEBUG   SenderThread:73536 [sender.py:send():369] send: run
+2023-07-24 15:14:55,228 INFO    SenderThread:73536 [dir_watcher.py:__init__():211] watching files in: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files
+2023-07-24 15:14:55,229 INFO    SenderThread:73536 [sender.py:_start_run_threads():1100] run started: 88g8qkf3 with start time 1690179294.642797
+2023-07-24 15:14:55,229 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:14:55,230 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:14:55,235 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: check_version
+2023-07-24 15:14:55,235 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: check_version
+2023-07-24 15:14:55,305 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: run_start
+2023-07-24 15:14:55,311 DEBUG   HandlerThread:73536 [system_info.py:__init__():31] System info init
+2023-07-24 15:14:55,312 DEBUG   HandlerThread:73536 [system_info.py:__init__():46] System info init done
+2023-07-24 15:14:55,312 INFO    HandlerThread:73536 [system_monitor.py:start():181] Starting system monitor
+2023-07-24 15:14:55,312 INFO    SystemMonitor:73536 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-07-24 15:14:55,312 INFO    HandlerThread:73536 [system_monitor.py:probe():201] Collecting system info
+2023-07-24 15:14:55,313 INFO    SystemMonitor:73536 [interfaces.py:start():190] Started cpu monitoring
+2023-07-24 15:14:55,313 INFO    SystemMonitor:73536 [interfaces.py:start():190] Started disk monitoring
+2023-07-24 15:14:55,313 DEBUG   HandlerThread:73536 [system_info.py:probe():195] Probing system
+2023-07-24 15:14:55,313 INFO    SystemMonitor:73536 [interfaces.py:start():190] Started gpuapple monitoring
+2023-07-24 15:14:55,315 INFO    SystemMonitor:73536 [interfaces.py:start():190] Started memory monitoring
+2023-07-24 15:14:55,317 INFO    SystemMonitor:73536 [interfaces.py:start():190] Started network monitoring
+2023-07-24 15:14:55,322 DEBUG   HandlerThread:73536 [system_info.py:_probe_git():180] Probing git
+2023-07-24 15:14:55,349 DEBUG   HandlerThread:73536 [system_info.py:_probe_git():188] Probing git done
+2023-07-24 15:14:55,349 DEBUG   HandlerThread:73536 [system_info.py:probe():240] Probing system done
+2023-07-24 15:14:55,349 DEBUG   HandlerThread:73536 [system_monitor.py:probe():210] {'os': 'macOS-13.4.1-arm64-arm-64bit', 'python': '3.10.12', 'heartbeatAt': '2023-07-24T06:14:55.313557', 'startedAt': '2023-07-24T06:14:54.628666', 'docker': None, 'cuda': None, 'args': None, 'state': 'running', 'program': '<python with no main file>', 'git': {'remote': 'https://github.com/KDT-AiVENGERS/AIInfra', 'commit': 'c43f3906a282c436e0f3ee4adb5c2c5018b3ce7d'}, 'email': 'leeuj9663@naver.com', 'root': '/Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra', 'host': 'iuijin-ui-MacBookPro.local', 'username': 'lee', 'executable': '/opt/homebrew/Caskroom/miniconda/base/envs/infra/bin/python', 'cpu_count': 10, 'cpu_count_logical': 10, 'disk': {'total': 460.4317207336426, 'used': 8.43935775756836}, 'gpuapple': {'type': 'arm', 'vendor': 'Apple'}, 'memory': {'total': 32.0}}
+2023-07-24 15:14:55,349 INFO    HandlerThread:73536 [system_monitor.py:probe():211] Finished collecting system info
+2023-07-24 15:14:55,349 INFO    HandlerThread:73536 [system_monitor.py:probe():214] Publishing system info
+2023-07-24 15:14:55,349 DEBUG   HandlerThread:73536 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-07-24 15:14:55,350 DEBUG   HandlerThread:73536 [system_info.py:_save_pip():67] Saving pip packages done
+2023-07-24 15:14:55,350 DEBUG   HandlerThread:73536 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-07-24 15:14:56,230 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:14:56,231 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/requirements.txt
+2023-07-24 15:14:56,231 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/conda-environment.yaml
+2023-07-24 15:14:57,785 DEBUG   HandlerThread:73536 [system_info.py:_save_conda():86] Saving conda packages done
+2023-07-24 15:14:57,786 INFO    HandlerThread:73536 [system_monitor.py:probe():216] Finished publishing system info
+2023-07-24 15:14:57,790 DEBUG   SenderThread:73536 [sender.py:send():369] send: files
+2023-07-24 15:14:57,790 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-metadata.json with policy now
+2023-07-24 15:14:57,798 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 15:14:57,798 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 15:14:58,022 DEBUG   SenderThread:73536 [sender.py:send():369] send: telemetry
+2023-07-24 15:14:58,022 DEBUG   SenderThread:73536 [sender.py:send():369] send: config
+2023-07-24 15:14:58,238 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/conda-environment.yaml
+2023-07-24 15:14:58,238 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-metadata.json
+2023-07-24 15:14:58,238 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:14:58,824 INFO    wandb-upload_0:73536 [upload_job.py:push():133] Uploaded file /var/folders/3_/19vyqy_n009677wdd2xcl_xh0000gn/T/tmpmjggzcdhwandb/vx62ptdo-wandb-metadata.json
+2023-07-24 15:14:59,662 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 15:14:59,697 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:14:59,697 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:14:59,697 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:14:59,698 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:00,246 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:00,247 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:01,430 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:01,431 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:01,431 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:01,431 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:02,257 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:02,257 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:03,132 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:03,133 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:03,133 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:03,133 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:03,257 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:04,263 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:04,683 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 15:15:04,859 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:04,860 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:04,860 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:04,860 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:05,263 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:06,268 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:06,595 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:06,596 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:06,596 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:06,596 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:07,269 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:08,274 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:08,322 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:08,323 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:08,323 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:08,323 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:09,275 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:09,697 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 15:15:10,196 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:10,197 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:10,197 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:10,197 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:10,280 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:10,280 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:12,133 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:12,133 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:12,133 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:12,133 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:12,288 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:12,288 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:12,799 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 15:15:12,800 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 15:15:13,897 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:13,897 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:13,897 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:13,898 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:14,290 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:14,290 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:14,727 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 15:15:15,698 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:15,698 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:15,698 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:15,699 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:16,292 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:16,293 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:17,570 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:17,571 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:17,571 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:17,572 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:18,302 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:18,302 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:19,745 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 15:15:20,312 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:22,320 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:24,325 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:24,748 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 15:15:25,326 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/config.yaml
+2023-07-24 15:15:26,330 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:27,804 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 15:15:27,804 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 15:15:28,338 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:29,196 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:29,196 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:29,196 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:29,197 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:29,343 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:30,219 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 15:15:30,344 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:30,562 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:30,562 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:30,563 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:30,563 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:31,349 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:32,316 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:32,316 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:32,316 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:32,317 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:32,351 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:32,352 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:34,061 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:34,062 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:34,062 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:34,062 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:34,359 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:34,359 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:35,255 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 15:15:35,881 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:35,882 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:35,882 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:35,882 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:36,364 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:36,365 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:37,654 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:37,655 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:37,655 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:37,655 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:38,369 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:38,369 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:39,353 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:39,354 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:39,354 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:39,354 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:39,371 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:40,275 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 15:15:40,373 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:41,070 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:41,070 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:41,070 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:41,071 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:41,376 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:42,376 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:42,773 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:42,774 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:42,774 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:42,774 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:42,806 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 15:15:42,806 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 15:15:43,381 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:44,384 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:44,468 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:44,468 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:44,468 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:44,469 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:45,281 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 15:15:45,385 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:46,238 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:46,239 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:46,239 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:46,239 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:46,389 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:46,389 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:47,935 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:47,936 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:47,936 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:47,936 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:48,395 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:48,395 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:15:50,360 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 15:15:50,406 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:52,417 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:54,427 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:55,323 DEBUG   SystemMonitor:73536 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-07-24 15:15:55,324 DEBUG   SenderThread:73536 [sender.py:send():369] send: telemetry
+2023-07-24 15:15:55,324 DEBUG   SenderThread:73536 [sender.py:send():369] send: stats
+2023-07-24 15:15:55,384 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 15:15:56,433 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:56,433 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/config.yaml
+2023-07-24 15:15:57,811 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 15:15:57,811 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 15:15:58,439 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:15:59,583 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:15:59,584 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:15:59,585 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:15:59,585 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:15:59,694 DEBUG   SenderThread:73536 [sender.py:send():369] send: config
+2023-07-24 15:16:00,448 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:16:00,448 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:16:00,632 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 15:16:02,455 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:16:03,913 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 15:16:03,914 DEBUG   SenderThread:73536 [sender.py:send():369] send: history
+2023-07-24 15:16:03,914 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 15:16:03,915 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:16:03,938 DEBUG   SenderThread:73536 [sender.py:send():369] send: telemetry
+2023-07-24 15:16:03,939 DEBUG   SenderThread:73536 [sender.py:send():369] send: exit
+2023-07-24 15:16:03,939 INFO    SenderThread:73536 [sender.py:send_exit():574] handling exit code: 0
+2023-07-24 15:16:03,939 INFO    SenderThread:73536 [sender.py:send_exit():576] handling runtime: 68
+2023-07-24 15:16:03,939 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:16:03,939 INFO    SenderThread:73536 [sender.py:send_exit():582] send defer
+2023-07-24 15:16:03,939 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 15:16:03,939 INFO    HandlerThread:73536 [handler.py:handle_request_defer():170] handle defer: 0
+2023-07-24 15:16:03,940 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: defer
+2023-07-24 15:16:03,940 INFO    SenderThread:73536 [sender.py:send_request_defer():598] handle sender defer: 0
+2023-07-24 15:16:03,940 INFO    SenderThread:73536 [sender.py:transition_state():602] send defer: 1
+2023-07-24 15:16:03,940 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 15:16:03,940 INFO    HandlerThread:73536 [handler.py:handle_request_defer():170] handle defer: 1
+2023-07-24 15:16:03,940 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: defer
+2023-07-24 15:16:03,940 INFO    SenderThread:73536 [sender.py:send_request_defer():598] handle sender defer: 1
+2023-07-24 15:16:03,940 INFO    SenderThread:73536 [sender.py:transition_state():602] send defer: 2
+2023-07-24 15:16:03,940 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 15:16:03,940 INFO    HandlerThread:73536 [handler.py:handle_request_defer():170] handle defer: 2
+2023-07-24 15:16:03,940 INFO    HandlerThread:73536 [system_monitor.py:finish():190] Stopping system monitor
+2023-07-24 15:16:03,940 DEBUG   SystemMonitor:73536 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-07-24 15:16:03,940 DEBUG   SystemMonitor:73536 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-07-24 15:16:03,940 INFO    HandlerThread:73536 [interfaces.py:finish():202] Joined cpu monitor
+2023-07-24 15:16:03,941 INFO    HandlerThread:73536 [interfaces.py:finish():202] Joined disk monitor
+2023-07-24 15:16:03,941 INFO    HandlerThread:73536 [interfaces.py:finish():202] Joined gpuapple monitor
+2023-07-24 15:16:03,941 INFO    HandlerThread:73536 [interfaces.py:finish():202] Joined memory monitor
+2023-07-24 15:16:03,941 INFO    HandlerThread:73536 [interfaces.py:finish():202] Joined network monitor
+2023-07-24 15:16:03,941 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: defer
+2023-07-24 15:16:03,941 INFO    SenderThread:73536 [sender.py:send_request_defer():598] handle sender defer: 2
+2023-07-24 15:16:03,941 INFO    SenderThread:73536 [sender.py:transition_state():602] send defer: 3
+2023-07-24 15:16:03,941 DEBUG   SenderThread:73536 [sender.py:send():369] send: stats
+2023-07-24 15:16:03,941 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 15:16:03,941 INFO    HandlerThread:73536 [handler.py:handle_request_defer():170] handle defer: 3
+2023-07-24 15:16:03,941 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: defer
+2023-07-24 15:16:03,941 INFO    SenderThread:73536 [sender.py:send_request_defer():598] handle sender defer: 3
+2023-07-24 15:16:03,941 INFO    SenderThread:73536 [sender.py:transition_state():602] send defer: 4
+2023-07-24 15:16:03,941 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 15:16:03,941 INFO    HandlerThread:73536 [handler.py:handle_request_defer():170] handle defer: 4
+2023-07-24 15:16:03,941 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: defer
+2023-07-24 15:16:03,942 INFO    SenderThread:73536 [sender.py:send_request_defer():598] handle sender defer: 4
+2023-07-24 15:16:03,942 INFO    SenderThread:73536 [sender.py:transition_state():602] send defer: 5
+2023-07-24 15:16:03,942 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 15:16:03,942 INFO    HandlerThread:73536 [handler.py:handle_request_defer():170] handle defer: 5
+2023-07-24 15:16:03,942 DEBUG   SenderThread:73536 [sender.py:send():369] send: summary
+2023-07-24 15:16:03,942 INFO    SenderThread:73536 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 15:16:03,942 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: defer
+2023-07-24 15:16:03,942 INFO    SenderThread:73536 [sender.py:send_request_defer():598] handle sender defer: 5
+2023-07-24 15:16:03,942 INFO    SenderThread:73536 [sender.py:transition_state():602] send defer: 6
+2023-07-24 15:16:03,942 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 15:16:03,942 INFO    HandlerThread:73536 [handler.py:handle_request_defer():170] handle defer: 6
+2023-07-24 15:16:03,942 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: defer
+2023-07-24 15:16:03,942 INFO    SenderThread:73536 [sender.py:send_request_defer():598] handle sender defer: 6
+2023-07-24 15:16:03,944 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 15:16:04,317 INFO    SenderThread:73536 [sender.py:transition_state():602] send defer: 7
+2023-07-24 15:16:04,318 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 15:16:04,318 INFO    HandlerThread:73536 [handler.py:handle_request_defer():170] handle defer: 7
+2023-07-24 15:16:04,318 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: defer
+2023-07-24 15:16:04,318 INFO    SenderThread:73536 [sender.py:send_request_defer():598] handle sender defer: 7
+2023-07-24 15:16:04,461 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:16:04,462 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/config.yaml
+2023-07-24 15:16:04,462 INFO    Thread-12 :73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:16:04,953 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: poll_exit
+2023-07-24 15:16:06,488 INFO    SenderThread:73536 [sender.py:transition_state():602] send defer: 8
+2023-07-24 15:16:06,489 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: poll_exit
+2023-07-24 15:16:06,489 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 15:16:06,489 INFO    HandlerThread:73536 [handler.py:handle_request_defer():170] handle defer: 8
+2023-07-24 15:16:06,490 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: defer
+2023-07-24 15:16:06,490 INFO    SenderThread:73536 [sender.py:send_request_defer():598] handle sender defer: 8
+2023-07-24 15:16:06,490 INFO    SenderThread:73536 [sender.py:transition_state():602] send defer: 9
+2023-07-24 15:16:06,490 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 15:16:06,491 INFO    HandlerThread:73536 [handler.py:handle_request_defer():170] handle defer: 9
+2023-07-24 15:16:06,491 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: defer
+2023-07-24 15:16:06,491 INFO    SenderThread:73536 [sender.py:send_request_defer():598] handle sender defer: 9
+2023-07-24 15:16:06,491 INFO    SenderThread:73536 [dir_watcher.py:finish():359] shutting down directory watcher
+2023-07-24 15:16:07,472 INFO    SenderThread:73536 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:16:07,473 INFO    SenderThread:73536 [dir_watcher.py:finish():389] scan: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files
+2023-07-24 15:16:07,473 INFO    SenderThread:73536 [dir_watcher.py:finish():403] scan save: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/requirements.txt requirements.txt
+2023-07-24 15:16:07,473 INFO    SenderThread:73536 [dir_watcher.py:finish():403] scan save: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log output.log
+2023-07-24 15:16:07,481 INFO    SenderThread:73536 [dir_watcher.py:finish():403] scan save: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/config.yaml config.yaml
+2023-07-24 15:16:07,482 INFO    SenderThread:73536 [dir_watcher.py:finish():403] scan save: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json wandb-summary.json
+2023-07-24 15:16:07,487 INFO    SenderThread:73536 [dir_watcher.py:finish():403] scan save: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/conda-environment.yaml conda-environment.yaml
+2023-07-24 15:16:07,487 INFO    SenderThread:73536 [dir_watcher.py:finish():403] scan save: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-metadata.json wandb-metadata.json
+2023-07-24 15:16:07,487 INFO    SenderThread:73536 [sender.py:transition_state():602] send defer: 10
+2023-07-24 15:16:07,488 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 15:16:07,488 INFO    HandlerThread:73536 [handler.py:handle_request_defer():170] handle defer: 10
+2023-07-24 15:16:07,497 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: defer
+2023-07-24 15:16:07,497 INFO    SenderThread:73536 [sender.py:send_request_defer():598] handle sender defer: 10
+2023-07-24 15:16:07,497 INFO    SenderThread:73536 [file_pusher.py:finish():159] shutting down file pusher
+2023-07-24 15:16:08,001 INFO    wandb-upload_0:73536 [upload_job.py:push():133] Uploaded file /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/requirements.txt
+2023-07-24 15:16:08,075 INFO    wandb-upload_3:73536 [upload_job.py:push():133] Uploaded file /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/wandb-summary.json
+2023-07-24 15:16:08,083 INFO    wandb-upload_4:73536 [upload_job.py:push():133] Uploaded file /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/conda-environment.yaml
+2023-07-24 15:16:08,094 INFO    wandb-upload_1:73536 [upload_job.py:push():133] Uploaded file /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/output.log
+2023-07-24 15:16:08,122 INFO    wandb-upload_2:73536 [upload_job.py:push():133] Uploaded file /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/files/config.yaml
+2023-07-24 15:16:08,329 INFO    Thread-11 (_thread_body):73536 [sender.py:transition_state():602] send defer: 11
+2023-07-24 15:16:08,330 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 15:16:08,330 INFO    HandlerThread:73536 [handler.py:handle_request_defer():170] handle defer: 11
+2023-07-24 15:16:08,332 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: defer
+2023-07-24 15:16:08,332 INFO    SenderThread:73536 [sender.py:send_request_defer():598] handle sender defer: 11
+2023-07-24 15:16:08,332 INFO    SenderThread:73536 [file_pusher.py:join():164] waiting for file pusher
+2023-07-24 15:16:08,332 INFO    SenderThread:73536 [sender.py:transition_state():602] send defer: 12
+2023-07-24 15:16:08,333 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 15:16:08,333 INFO    HandlerThread:73536 [handler.py:handle_request_defer():170] handle defer: 12
+2023-07-24 15:16:08,336 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: defer
+2023-07-24 15:16:08,336 INFO    SenderThread:73536 [sender.py:send_request_defer():598] handle sender defer: 12
+2023-07-24 15:16:08,582 INFO    SenderThread:73536 [sender.py:transition_state():602] send defer: 13
+2023-07-24 15:16:08,583 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 15:16:08,583 INFO    HandlerThread:73536 [handler.py:handle_request_defer():170] handle defer: 13
+2023-07-24 15:16:08,583 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: defer
+2023-07-24 15:16:08,583 INFO    SenderThread:73536 [sender.py:send_request_defer():598] handle sender defer: 13
+2023-07-24 15:16:08,583 INFO    SenderThread:73536 [sender.py:transition_state():602] send defer: 14
+2023-07-24 15:16:08,583 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 15:16:08,583 INFO    HandlerThread:73536 [handler.py:handle_request_defer():170] handle defer: 14
+2023-07-24 15:16:08,583 DEBUG   SenderThread:73536 [sender.py:send():369] send: final
+2023-07-24 15:16:08,583 DEBUG   SenderThread:73536 [sender.py:send():369] send: footer
+2023-07-24 15:16:08,583 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: defer
+2023-07-24 15:16:08,583 INFO    SenderThread:73536 [sender.py:send_request_defer():598] handle sender defer: 14
+2023-07-24 15:16:08,583 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: poll_exit
+2023-07-24 15:16:08,584 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: server_info
+2023-07-24 15:16:08,584 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: get_summary
+2023-07-24 15:16:08,584 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: sampled_history
+2023-07-24 15:16:08,584 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: poll_exit
+2023-07-24 15:16:08,584 DEBUG   SenderThread:73536 [sender.py:send_request():396] send_request: server_info
+2023-07-24 15:16:09,003 DEBUG   HandlerThread:73536 [handler.py:handle_request():144] handle_request: shutdown
+2023-07-24 15:16:09,003 INFO    HandlerThread:73536 [handler.py:finish():854] shutting down handler
+2023-07-24 15:16:09,585 INFO    WriterThread:73536 [datastore.py:close():298] close: /Users/lee/Desktop/이의진/Programmers/finalProject/AIInfra/baselines/wandb/run-20230724_151454-88g8qkf3/run-88g8qkf3.wandb
+2023-07-24 15:16:10,009 INFO    SenderThread:73536 [sender.py:finish():1526] shutting down sender
+2023-07-24 15:16:10,009 INFO    SenderThread:73536 [file_pusher.py:finish():159] shutting down file pusher
+2023-07-24 15:16:10,009 INFO    SenderThread:73536 [file_pusher.py:join():164] waiting for file pusher

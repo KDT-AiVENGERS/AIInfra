@@ -26,6 +26,8 @@ task:
     interval: epoch
 
 train:
+  # name: my_model_5
+
   callbacks:
     checkpoint_callback:
       monitor: "val_avg_acc"
@@ -50,9 +52,9 @@ train:
     _target_: pytorch_lightning.loggers.WandbLogger
     save_dir: log
     project: wandb_test
-    # name: my_model_5 -> 해당 실험에 특정 이름을 부여하고 싶으면 활성화
 
-  max_epochs: 2
+  trainer:
+    max_epochs: 2
 
 sweep:
   method: "bayes"

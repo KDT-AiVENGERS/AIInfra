@@ -1,0 +1,135 @@
+
+Epoch 0:   1%|▏         | 31/2250 [00:01<01:31, 24.22it/s, v_num=lmpv, train_acc=0.100, train_loss=2.290]
+GPU available: True (mps), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name  | Type     | Params
+-----------------------------------
+0 | model | CNNModel | 429 K
+-----------------------------------
+429 K     Trainable params
+0         Non-trainable params
+429 K     Total params
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 0: 100%|██████████| 2250/2250 [01:14<00:00, 30.15it/s, v_num=lmpv, train_acc=0.600, train_loss=0.650]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 0, Avg. Training Loss: 1.113, Avg. Training Accuracy: 0.568 Avg. Validation Loss: 0.499, Avg. Validation Accuracy: 0.697
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 1: 100%|██████████| 2250/2250 [01:14<00:00, 30.05it/s, v_num=lmpv, train_acc=0.650, train_loss=0.551]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Validation DataLoader 0:  99%|█████████▉| 1492/1500 [00:36<00:00, 40.57it/s]
+Epoch 1, Avg. Training Loss: 0.391, Avg. Training Accuracy: 0.720 Avg. Validation Loss: 0.336, Avg. Validation Accuracy: 0.735
+Epoch 1: 100%|██████████| 2250/2250 [01:52<00:00, 20.05it/s, v_num=lmpv, train_acc=0.650, train_loss=0.551]
+
+
+
+
+
+
+
+Testing DataLoader 0: 100%|██████████| 625/625 [00:15<00:00, 41.29it/s]
