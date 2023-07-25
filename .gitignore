@@ -1,6 +1,6 @@
-baselines/checkpoints
-baselines/MNIST
-baselines/log
+# baselines/checkpoints
+# baselines/MNIST
+# baselines/log
 data/
 .env
 models/

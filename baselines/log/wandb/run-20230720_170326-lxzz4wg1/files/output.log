@@ -1,9 +1,0 @@
-An error occurred:
-Traceback (most recent call last):
-  File "/var/folders/3_/19vyqy_n009677wdd2xcl_xh0000gn/T/ipykernel_42651/3324841793.py", line 63, in <module>
-    sdfkjdslkfjd
-NameError: name 'sdfkjdslkfjd' is not defined
-GPU available: True (mps), used: True
-TPU available: False, using: 0 TPU cores
-IPU available: False, using: 0 IPUs
-HPU available: False, using: 0 HPUs
