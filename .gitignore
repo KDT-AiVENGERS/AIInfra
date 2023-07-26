@@ -1,6 +1,9 @@
 baselines/checkpoints
 baselines/MNIST
 baselines/log
+baselines/checkpoints
+baselines/wandb
+baselines/lightning_logs
 data/
 .env
 models/
