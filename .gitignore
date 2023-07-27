@@ -1,6 +1,11 @@
 baselines/checkpoints
 baselines/MNIST
 baselines/log
+dataset
+experiment/*/checkpoints
+experiment/*/wandb
+Reference_MNIST/checkpoints
+Reference_MNIST/wandb
 data/
 .env
 models/
