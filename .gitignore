@@ -6,7 +6,6 @@ experiment/*/checkpoints
 experiment/*/wandb
 Reference_MNIST/checkpoints
 Reference_MNIST/wandb
-baselines/checkpoints
 baselines/wandb
 baselines/lightning_logs
 data/
