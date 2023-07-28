@@ -5,6 +5,9 @@ dataset
 experiment/*/checkpoints
 experiment/*/wandb
 experiment/*/configs
+experiment/*/huggingface
+experiment/*/lightning_logs
+experiment/*/tmp_trainer
 Reference_MNIST/checkpoints
 Reference_MNIST/wandb
 baselines/wandb
