@@ -1,34 +1,66 @@
 member_name: eui-jin
 
+variables:
+  pretrained: &pretrained bert-base-multilingual-cased
+  finetuned: &finetuned bert-base-multilingual-cased # 여기에 save_model 로 저장된 model의 경로를 입력합니다
+
 universal:
   tokenizer:
-    _target_: transformers.AutoTokenizer.from_pretrained
-    pretrained_model_name_or_path: bert-base-multilingual-cased
+    train:
+      _target_: transformers.AutoTokenizer.from_pretrained
+      pretrained_model_name_or_path: *pretrained
+
+    pred:
+      _target_: transformers.AutoTokenizer.from_pretrained
+      pretrained_model_name_or_path: *finetuned
 
   train_target_cols:
     - 자격요건
-    - 직무내용
+    - 우대조건
+    - 복지
+    - 회사소개
+    - 주요업무
   predict_target_cols:
     - 자격요건
-    - 직무내용
+    - 우대조건
+    - 복지
+    - 회사소개
+    - 주요업무
 
-data:
-  data_dir: "../../dataset/pre_result_2.csv"
-  max_batch_size: 64
+train_data:
+  train_data_dir: "../../dataset/pre_result_2.csv"
+  max_batch_size: 4
   train_test_ratio: 0.9
   train_val_ratio: 0.8
   sliding_window_interval: 200
   masked_token_ratio: 0.15
   # max_length: None
 
+predict_data:
+  pred_data_dir: "../../dataset/result_5.csv"
+  max_batch_size: 5
+  sliding_window_interval: 200
+
 models:
   DefaultBert:
     train:
       _target_: transformers.BertForMaskedLM.from_pretrained
-      pretrained_model_name_or_path: bert-base-multilingual-cased
+      pretrained_model_name_or_path: *pretrained
     pred:
       _target_: transformers.AutoModel.from_pretrained
-      pretrained_model_name_or_path: bert-base-multilingual-cased
+      pretrained_model_name_or_path: *finetuned
+
+models_from_ckpt:
+  ckpt_dir: ./checkpoints/v9_s0/last.ckpt
+  version_number: 3
+  model:
+    train:
+      _target_: transformers.BertForMaskedLM.from_pretrained
+      pretrained_model_name_or_path: *pretrained
+    pred:
+      _target_: transformers.AutoModel.from_pretrained
+      pretrained_model_name_or_path: *finetuned
+  # name: my_model
 
 task:
   optimizer:
@@ -70,6 +102,8 @@ train:
 
   trainer:
     max_epochs: 1
+
+is_sweep_enable: False
 
 sweep:
   method: "bayes"
