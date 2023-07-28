@@ -1,26 +1,21 @@
 member_name: eui-jin
-
 universal:
   tokenizer:
     _target_: transformers.AutoTokenizer.from_pretrained
     pretrained_model_name_or_path: bert-base-multilingual-cased
-
   train_target_cols:
-    - 자격요건
-    - 직무내용
+  - 자격요건
+  - 직무내용
   predict_target_cols:
-    - 자격요건
-    - 직무내용
-
+  - 자격요건
+  - 직무내용
 data:
-  data_dir: "../../dataset/pre_result_2.csv"
-  max_batch_size: 4
+  data_dir: ../../dataset/pre_result_2.csv
+  max_batch_size: 64
   train_test_ratio: 0.9
   train_val_ratio: 0.8
   sliding_window_interval: 200
   masked_token_ratio: 0.15
-  # max_length: None
-
 models:
   DefaultBert:
     train:
@@ -29,57 +24,46 @@ models:
     pred:
       _target_: transformers.AutoModel.from_pretrained
       pretrained_model_name_or_path: bert-base-multilingual-cased
-
 task:
   optimizer:
-    _target_: "torch.optim.AdamW"
-    lr: 2e-5
+    _target_: torch.optim.AdamW
+    lr: 2e-05
   lr_scheduler:
     scheduler:
-      _target_: "torch.optim.lr_scheduler.CosineAnnealingWarmRestarts"
+      _target_: torch.optim.lr_scheduler.CosineAnnealingWarmRestarts
       T_0: 50
       T_mult: 2
-      verbose: False
-
+      verbose: false
     interval: epoch
-
 train:
   callbacks:
     checkpoint_callback:
-      monitor: "val_avg_loss"
-      filename: "best-model-{epoch:02d}-{val_acc:.2f}"
+      monitor: val_avg_loss
+      filename: best-model-{epoch:02d}-{val_acc:.2f}
       save_top_k: 1
-      save_last: True
-      mode: "min"
+      save_last: true
+      mode: min
     early_stop_callback:
-      monitor: "val_avg_loss"
+      monitor: val_avg_loss
       min_delta: 0.01
       patience: 3
-      verbose: False
-      mode: "min"
-
+      verbose: false
+      mode: min
   logger:
-    # ----- tensorboard -----
-    # _target_: pytorch_lightning.loggers.TensorBoardLogger
-    # save_dir: tb_logs
-    # name: my_model
-    # ----- Wandb -----
-    # name: my_model
     _target_: pytorch_lightning.loggers.WandbLogger
     project: wandb_test
-
   trainer:
     max_epochs: 1
-
 sweep:
-  method: "bayes"
+  method: bayes
   metric:
-    name: "val_avg_loss"
-    goal: "minimize"
+    name: val_avg_loss
+    goal: minimize
   parameters:
     max_batch_size:
-      values: [4]
+      values:
+      - 4
   early_terminate:
-    type: "hyperband"
+    type: hyperband
     min_iter: 1
   run_cap: 1
