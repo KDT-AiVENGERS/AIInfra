@@ -4,6 +4,7 @@ baselines/log
 dataset
 experiment/*/checkpoints
 experiment/*/wandb
+experiment/*/configs
 Reference_MNIST/checkpoints
 Reference_MNIST/wandb
 baselines/wandb
