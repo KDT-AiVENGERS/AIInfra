@@ -1,4 +1,4 @@
-member_name: eui-jin
+member_name: tae-geun
 
 universal:
   tokenizer:
@@ -7,14 +7,17 @@ universal:
 
   train_target_cols:
     - 자격요건
-    - 직무내용
+    - 우대조건
+    - 복지
+    - 회사소개
+    - 주요업무
   predict_target_cols:
     - 자격요건
-    - 직무내용
+    - 우대조건
 
 data:
   data_dir: "../../dataset/pre_result_2.csv"
-  max_batch_size: 64
+  max_batch_size: 4
   train_test_ratio: 0.9
   train_val_ratio: 0.8
   sliding_window_interval: 200
@@ -33,7 +36,7 @@ models:
 task:
   optimizer:
     _target_: "torch.optim.AdamW"
-    lr: 2e-5
+    lr: 1e-5
   lr_scheduler:
     scheduler:
       _target_: "torch.optim.lr_scheduler.CosineAnnealingWarmRestarts"
@@ -47,14 +50,14 @@ train:
   callbacks:
     checkpoint_callback:
       monitor: "val_avg_loss"
-      filename: "best-model-{epoch:02d}-{val_acc:.2f}"
-      save_top_k: 1
+      filename: "best-model-{epoch:02d}-{val_avg_loss:.3f}"
+      save_top_k: 3
       save_last: True
       mode: "min"
     early_stop_callback:
       monitor: "val_avg_loss"
       min_delta: 0.01
-      patience: 3
+      patience: 5
       verbose: False
       mode: "min"
 
@@ -69,7 +72,7 @@ train:
     project: wandb_test
 
   trainer:
-    max_epochs: 1
+    max_epochs: 5
 
 sweep:
   method: "bayes"
@@ -78,7 +81,8 @@ sweep:
     goal: "minimize"
   parameters:
     max_batch_size:
-      values: [4]
+      values: [8, 16, 32]
+      lr: [1e-3, 1e-4, 1e-5, 1e-6]
   early_terminate:
     type: "hyperband"
     min_iter: 1
