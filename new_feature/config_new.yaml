@@ -1,6 +1,6 @@
 member_name: eui-jin
 data:
-  data_dir: "./\uC758\uC9C4"
+  data_dir: ./의진
   batch_size: 64
   pred_batch_size: 32
   train_ratio: 0.6
