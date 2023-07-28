@@ -12,3 +12,5 @@ baselines/lightning_logs
 data/
 .env
 models/
+new_feature/checkpoints
+new_feature/wandb
