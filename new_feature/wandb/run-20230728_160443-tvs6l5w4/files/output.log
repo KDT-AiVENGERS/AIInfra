@@ -1,0 +1,39 @@
+Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to ./의진/MNIST/raw/train-images-idx3-ubyte.gz
+Extracting ./의진/MNIST/raw/train-images-idx3-ubyte.gz to ./의진/MNIST/raw
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to ./의진/MNIST/raw/train-labels-idx1-ubyte.gz
+Extracting ./의진/MNIST/raw/train-labels-idx1-ubyte.gz to ./의진/MNIST/raw
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
+GPU available: True (mps), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+100%|██████████| 9912422/9912422 [00:00<00:00, 10228210.35it/s]
+100%|██████████| 28881/28881 [00:00<00:00, 6043187.52it/s]
+100%|██████████| 1648877/1648877 [00:00<00:00, 6787092.74it/s]
+100%|██████████| 4542/4542 [00:00<00:00, 1902009.66it/s]
+  | Name  | Type     | Params
+-----------------------------------
+0 | model | CNNModel | 429 K
+-----------------------------------
+429 K     Trainable params
+0         Non-trainable params
+429 K     Total params
+1.717     Total estimated model params size (MB)
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to ./의진/MNIST/raw/t10k-images-idx3-ubyte.gz
+Extracting ./의진/MNIST/raw/t10k-images-idx3-ubyte.gz to ./의진/MNIST/raw
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to ./의진/MNIST/raw/t10k-labels-idx1-ubyte.gz
+Extracting ./의진/MNIST/raw/t10k-labels-idx1-ubyte.gz to ./의진/MNIST/raw
+
+
+
+
+Epoch 0:  25%|██▌       | 283/1125 [00:09<00:27, 30.70it/s, v_num=l5w4, train_acc=0.400, train_loss=2.070]
+
+
+
+
+
+
