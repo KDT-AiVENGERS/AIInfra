@@ -1,0 +1,60 @@
+member_name: eui-jin
+data:
+  data_dir: "./\uC758\uC9C4"
+  batch_size: 64
+  pred_batch_size: 32
+  train_ratio: 0.6
+models:
+  CNNModel:
+    _target_: __main__.CNNModel
+    type: small
+task:
+  num_classes: 10
+  optimizer:
+    _target_: torch.optim.AdamW
+    lr: 2e-05
+  lr_scheduler:
+    scheduler:
+      _target_: torch.optim.lr_scheduler.CosineAnnealingWarmRestarts
+      T_0: 50
+      T_mult: 2
+      verbose: false
+    interval: epoch
+train:
+  callbacks:
+    checkpoint_callback:
+      monitor: val_avg_acc
+      filename: best-model-{epoch:02d}-{val_acc:.2f}
+      save_top_k: 1
+      save_last: true
+      mode: max
+    early_stop_callback:
+      monitor: val_avg_acc
+      min_delta: 0.01
+      patience: 3
+      verbose: false
+      mode: max
+  logger:
+    _target_: pytorch_lightning.loggers.WandbLogger
+    project: wandb_test
+  trainer:
+    max_epochs: 2
+sweep:
+  method: bayes
+  metric:
+    name: val_avg_acc
+    goal: maximize
+  parameters:
+    batch_size:
+      values:
+      - 32
+      - 64
+      - 128
+    type:
+      values:
+      - small
+      - large
+  early_terminate:
+    type: hyperband
+    min_iter: 1
+  run_cap: 2
