@@ -50,6 +50,18 @@ models:
       _target_: transformers.AutoModel.from_pretrained
       pretrained_model_name_or_path: *finetuned
 
+models_from_ckpt:
+  ckpt_dir: ./checkpoints/v9_s0/last.ckpt
+  version_number: 3
+  model:
+    train:
+      _target_: transformers.BertForMaskedLM.from_pretrained
+      pretrained_model_name_or_path: *pretrained
+    pred:
+      _target_: transformers.AutoModel.from_pretrained
+      pretrained_model_name_or_path: *finetuned
+  # name: my_model
+
 task:
   optimizer:
     _target_: "torch.optim.AdamW"
@@ -90,6 +102,8 @@ train:
 
   trainer:
     max_epochs: 1
+
+is_sweep_enable: False
 
 sweep:
   method: "bayes"
