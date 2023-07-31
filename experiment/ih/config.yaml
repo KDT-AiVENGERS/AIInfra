@@ -1,8 +1,8 @@
-member_name: eui-jin
+member_name: in-ho
 
 variables:
-  pretrained: &pretrained bert-base-multilingual-cased
-  finetuned: &finetuned bert-base-multilingual-cased # 여기에 save_model 로 저장된 model의 경로를 입력합니다
+  pretrained: &pretrained klue/bert-base
+  finetuned: &finetuned klue/bert-base # 여기에 save_model 로 저장된 model의 경로를 입력합니다
 
 universal:
   tokenizer:
@@ -28,8 +28,8 @@ universal:
     - 주요업무
 
 train_data:
-  train_data_dir: "../../dataset/pre_result_2.csv"
-  max_batch_size: 4
+  train_data_dir: "../../dataset/pre_result.csv"
+  max_batch_size: 8
   train_test_ratio: 0.9
   train_val_ratio: 0.8
   sliding_window_interval: 200
@@ -55,12 +55,12 @@ models_from_ckpt:
   version_number: 3
   model:
     train:
-      _target_: transformers.BertForMaskedLM.from_pretrained
+      _target_: transformers.AutoModel.from_pretrained
       pretrained_model_name_or_path: *pretrained
     pred:
       _target_: transformers.AutoModel.from_pretrained
       pretrained_model_name_or_path: *finetuned
-  # name: my_model
+  name: klue/bert-base
 
 task:
   optimizer:
@@ -79,7 +79,7 @@ train:
   callbacks:
     checkpoint_callback:
       monitor: "val_avg_loss"
-      filename: "best-model-{epoch:02d}-{val_acc:.2f}"
+      filename: "best-model-{epoch:02d}-{val_avg_loss:.2f}"
       save_top_k: 1
       save_last: True
       mode: "min"
@@ -96,7 +96,7 @@ train:
     # save_dir: tb_logs
     # name: my_model
     # ----- Wandb -----
-    # name: my_model
+    name: klue/bert-base_batch8
     _target_: pytorch_lightning.loggers.WandbLogger
     project: wandb_test
 
