@@ -1,4 +1,4 @@
-member_name: eui-jin
+member_name: chanhyuk
 
 variables:
   pretrained: &pretrained bert-base-multilingual-cased
@@ -27,9 +27,9 @@ universal:
     - 회사소개
     - 주요업무
 
-train_data:
-  train_data_dir: "../../dataset/pre_result_2.csv"
-  max_batch_size: 4
+data:
+  data_dir: "../../dataset/pre_result_2.csv"
+  max_batch_size: 64
   train_test_ratio: 0.9
   train_val_ratio: 0.8
   sliding_window_interval: 200
@@ -98,7 +98,7 @@ train:
     # ----- Wandb -----
     # name: my_model
     _target_: pytorch_lightning.loggers.WandbLogger
-    project: wandb_test
+    project: test_ch_wandb
 
   trainer:
     max_epochs: 1
