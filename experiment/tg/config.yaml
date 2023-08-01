@@ -1,4 +1,4 @@
-member_name: eui-jin
+member_name: tae-geun
 
 variables:
   pretrained: &pretrained bert-base-multilingual-cased
@@ -16,10 +16,6 @@ universal:
 
   train_target_cols:
     - 자격요건
-    - 우대조건
-    - 복지
-    - 회사소개
-    - 주요업무
   predict_target_cols:
     - 자격요건
     - 우대조건
@@ -65,7 +61,7 @@ models_from_ckpt:
 task:
   optimizer:
     _target_: "torch.optim.AdamW"
-    lr: 2e-5
+    lr: 1e-5
   lr_scheduler:
     scheduler:
       _target_: "torch.optim.lr_scheduler.CosineAnnealingWarmRestarts"
