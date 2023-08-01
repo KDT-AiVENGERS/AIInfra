@@ -24,7 +24,7 @@ universal:
     - 주요업무
 
 train_data:
-  train_data_dir: "../../dataset/pre_result_2.csv"
+  train_data_dir: "../../dataset/pre_result_3.csv"
   max_batch_size: 4
   train_test_ratio: 0.9
   train_val_ratio: 0.8
