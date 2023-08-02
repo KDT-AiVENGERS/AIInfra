@@ -1,8 +1,8 @@
-member_name: eui-jin
+member_name: seung-lim
 
 variables:
-  pretrained: &pretrained bert-base-multilingual-cased
-  finetuned: &finetuned bert-base-multilingual-cased # 여기에 save_model 로 저장된 model의 경로를 입력합니다
+  pretrained: &pretrained beomi/kcbert-large
+  finetuned: &finetuned ./huggingface/kclarge1all # 여기에 save_model 로 저장된 model의 경로를 입력합니다
 
 universal:
   tokenizer:
@@ -28,7 +28,7 @@ universal:
     - 주요업무
 
 train_data:
-  train_data_dir: "../../dataset/pre_result_2.csv"
+  train_data_dir: "../../dataset/pre_result.csv"
   max_batch_size: 4
   train_test_ratio: 0.9
   train_val_ratio: 0.8
@@ -37,7 +37,7 @@ train_data:
   # max_length: None
 
 predict_data:
-  pred_data_dir: "../../dataset/result_5.csv"
+  pred_data_dir: "../../dataset/pre_result.csv"
   max_batch_size: 5
   sliding_window_interval: 200
 
