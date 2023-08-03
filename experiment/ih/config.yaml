@@ -29,7 +29,7 @@ universal:
 
 train_data:
   train_data_dir: "../../dataset/pre_result.csv"
-  max_batch_size: 8
+  max_batch_size: 12
   train_test_ratio: 0.9
   train_val_ratio: 0.8
   sliding_window_interval: 200
@@ -44,10 +44,14 @@ predict_data:
 models:
   DefaultBert:
     train:
-      _target_: transformers.BertForMaskedLM.from_pretrained
+      _target_: transformers.AutoModelWithLMHead.from_pretrained
       pretrained_model_name_or_path: *pretrained
     pred:
       _target_: transformers.AutoModel.from_pretrained
+      pretrained_model_name_or_path: *finetuned
+
+    mlm:
+      _target_: transformers.AutoModelWithLMHead.from_pretrained
       pretrained_model_name_or_path: *finetuned
 
 models_from_ckpt:
@@ -55,12 +59,12 @@ models_from_ckpt:
   version_number: 3
   model:
     train:
-      _target_: transformers.AutoModel.from_pretrained
+      _target_: transformers.AutoModelWithLMHead.from_pretrained
       pretrained_model_name_or_path: *pretrained
     pred:
       _target_: transformers.AutoModel.from_pretrained
       pretrained_model_name_or_path: *finetuned
-  name: klue/bert-base
+  name: kcbert-base
 
 task:
   optimizer:
@@ -96,7 +100,7 @@ train:
     # save_dir: tb_logs
     # name: my_model
     # ----- Wandb -----
-    name: klue/bert-base_batch8
+    # name: my_model
     _target_: pytorch_lightning.loggers.WandbLogger
     project: wandb_test
 
