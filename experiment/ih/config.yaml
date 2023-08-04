@@ -29,7 +29,7 @@ universal:
 
 train_data:
   train_data_dir: "../../dataset/pre_result.csv"
-  max_batch_size: 12
+  max_batch_size: 4
   train_test_ratio: 0.9
   train_val_ratio: 0.8
   sliding_window_interval: 200
@@ -100,12 +100,12 @@ train:
     # save_dir: tb_logs
     # name: my_model
     # ----- Wandb -----
-    name: klue_bert_base
+    name: klue_bert_base_epoch3
     _target_: pytorch_lightning.loggers.WandbLogger
     project: wandb_test
 
   trainer:
-    max_epochs: 1
+    max_epochs: 3
 
 is_sweep_enable: False
 
