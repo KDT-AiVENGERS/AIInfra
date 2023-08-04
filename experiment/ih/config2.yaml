@@ -2,7 +2,7 @@ member_name: in-ho
 
 variables:
   pretrained: &pretrained klue/bert-base
-  finetuned: &finetuned eno3940/klue-bert-epoch3 # 여기에 save_model 로 저장된 model의 경로를 입력합니다
+  finetuned: &finetuned klue/bert-base # 여기에 save_model 로 저장된 model의 경로를 입력합니다
 
 universal:
   tokenizer:
@@ -50,9 +50,9 @@ models:
       _target_: transformers.AutoModel.from_pretrained
       pretrained_model_name_or_path: *finetuned
 
-    origin:
-      _target_: transformers.AutoModel.from_pretrained
-      pretrained_model_name_or_path: *pretrained
+    mlm:
+      _target_: transformers.BertForMaskedLM.from_pretrained
+      pretrained_model_name_or_path: *finetuned
 
 models_from_ckpt:
   ckpt_dir: ./checkpoints/v9_s0/last.ckpt
@@ -64,7 +64,7 @@ models_from_ckpt:
     pred:
       _target_: transformers.AutoModel.from_pretrained
       pretrained_model_name_or_path: *finetuned
-  # name: my_model
+  name: kcbert-base
 
 task:
   optimizer:
