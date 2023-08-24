@@ -2,7 +2,7 @@ member_name: seung-lim
 
 variables:
   pretrained: &pretrained beomi/kcbert-large
-  finetuned: &finetuned ./huggingface/kcbert_large_2epoch # 여기에 save_model 로 저장된 model의 경로를 입력합니다
+  finetuned: &finetuned LoraBaek/kcbert-large-finetuned # 여기에 save_model 로 저장된 model의 경로를 입력합니다
 
 universal:
   tokenizer:
@@ -37,7 +37,7 @@ train_data:
   # max_length: None
 
 predict_data:
-  pred_data_dir: "../../dataset/sampling_data.csv"
+  pred_data_dir: "../../dataset/pre_result.csv"
   max_batch_size: 5
   sliding_window_interval: 200
 
@@ -50,12 +50,12 @@ models:
       _target_: transformers.AutoModel.from_pretrained
       pretrained_model_name_or_path: *finetuned
 
-    mlm:
-      _target_: transformers.BertForMaskedLM.from_pretrained
-      pretrained_model_name_or_path: *finetuned
+    origin:
+      _target_: transformers.AutoModel.from_pretrained
+      pretrained_model_name_or_path: *pretrained
 
 models_from_ckpt:
-  ckpt_dir: ./checkpoints/v2_s0_epoch2nd/last.ckpt
+  ckpt_dir: ./checkpoints/v9_s0/last.ckpt
   version_number: 3
   model:
     train:

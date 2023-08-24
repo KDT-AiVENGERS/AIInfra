@@ -17,3 +17,5 @@ data/
 models/
 new_feature/checkpoints
 new_feature/wandb
+.DS_Store
+experiment/.DS_Store
