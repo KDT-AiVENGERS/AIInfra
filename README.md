@@ -6,7 +6,6 @@
 
 ### "인공지능 모델을 효과적으로 개발하고 테스트" 하기 위해 만들어졌습니다.
 
-</div>
 <br />
 
 백엔드 개발에서 서버실 → IDC → 클라우드 서비스로 넘어오면서
@@ -156,26 +155,41 @@ model = BertForMaskedLM.from_pretrained('bert-base-multilingual-cased')
 
 모델의 fine-tuning 은 필요없지만, 본 프로젝트에서 주로 다룰 문장은 공고와 사용자 질의, 구직 관련 키워드에 한정되어 있으므로, 모델의 성능을 향상시키기 위해서는 domain-adaptation 과정이 필요하다는 의견이 제기되었습니다. Domain-adaptation 을 위해서는 BERT 모델의 훈련 방법으로 알려져 있는 Masked language modeling(MLM) 방식과 Next sentence prediction(NSP) 방식의 훈련이 필요하며, 훈련에 사용하는 데이터는 수집한 공고 문장 데이터를 그대로 활용 가능하므로 별도의 라벨링 작업은 필요하지 않습니다.
 
-- Hugging face 에서 MLM 용 모델을 불러와, 보유한 데이터로 MLM 학습시키는 코드와 학습한 모델을 활용하여 주어진 문장으로부터 encoded vector 를 추출하는 코드를 작성합니다.
+- Hugging Face 에서 MLM 용 모델을 불러와, 보유한 데이터로 MLM 학습시키는 코드와 학습한 모델을 활용하여 주어진 문장으로부터 encoded vector 를 추출하는 코드를 작성합니다.
   `model_analysis/Bert_embedding.ipynb`
--
+- BERT 계열의 다양한 모델을 Hugging Face에서 불러오는 코드를 작성합니다.
+  `model_analysis/Bert_various.ipynb`
+- BERT 모델에서 나온 결과를 바탕으로 Cosine Similarity를 계산하는 코드를 작성합니다.
+  `model_analysis/Bert_cosine_cal.ipynb`
 
-우선 Baselines 폴더에서 서비스 개발에 활용할 여러 모델에 대한 훈련 및 추론 코드를 단일화 된 형태로 구현하였으며, 각자 학습을 할 수 있도록 Experiment 폴더에 개인 폴더와 설정 파일을 구성하였습니다. 학습이 진행되면서 학습에 사용된 조건이 기록된 설정 파일과 결과가 자동으로 저장되며, 일관된 형태의 시각화 도구를 통해 자동으로 결과가 축적되어 온라인에 기록됩니다.
+### 3. 모델 성능 비교 테스트 전략 설정
 
-### BERT from HuggingFace
+- 모델의 성능을 평가하기 위해 2가지 지표를 사용합니다.
+- 첫 번째 지표는 model 학습과정에서의 loss 값입니다. 이 값은 작을수록 좋은 모델로 판별합니다.
+- 첫 번째 지표는 wandb 대시보드에서 시각화된 결과를 이용해 쉽게 비교분석할 수 있습니다.
+- 두 번째 지표는 TestSheet Score입니다. 유사도가 높게 측정되어야 하는 예시 Set와 유사도가 낮게 측정되어야 하는 예시 Set를 모델에 입력하여 우리가 예상한 유사도대로 잘 나오는지 판별하는 지표입니다.
+- 두 번째 지표는 TestSheet Score를 계산해주는 코드를 작성하여 그 결과를 비교분석할 수 있습니다.
 
-북극성 프로젝트의 서비스 중 공고 추천 서비스의 구현 방법을 고민하면서 몇 가지 모델을 구상하였습니다. 그 중 하나는 BERT 모델을 활용하여 문장을 의미를 가지는 벡터로 변환하고, 공고의 문장과 사용자 질의응답의 문장으로부터 변환된 벡터끼리의 유사도를 계산하여 추천 공고를 결정하는 방식이었습니다. 이 방식은 기 훈련된 BERT 모델의 임베딩 레이어와 히든 레이어가 출력으로 내놓을 벡터가 문장의 맥락과 주요 단어의 의미를 잘 내포하고 있을 것이라는 가정에서 제기되었으며, 기 훈련된 모델을 활용하는 만큼 별도의 fine-tuning 과 라벨링 된 데이터가 없이 적용할 수 있다는 장점이 있었습니다.
+### 4. 최종 실험용 Baseline Model을 작성 (Baseline)
 
-BERT 모델은 Hugging face 를 통해 매우 편리하게 활용 가능합니다. Hugging face 라이브러리를 import 한 후, 아래와 같이 tokenizer 와 model 을 불러오기 하여 즉시 사용 가능합니다.
+- 위에서 분석된 결과를 바탕으로 최종 Baseline Model을 작성합니다.
+- Pretrained된 모델을 실제 서비스에 적용되는 모델 구조로 이식할 때 2가지 방법을 고안했습니다.
+  `new_prediction_layer_deletion 방식`
+  `new_prediction_from_pretrained 방식`
+  > 자세한 설명 보기 (접기 이용, 아래에 상세 설명)
+- 구성된 Baseline Model 코드 파일들의 구성은 아래와 같습니다.
+  `train_from_pretrained.ipynb` 또는 `train_layer_deletion.ipynb` (최종 모델 학습 코드)
+  `config.yaml` (실험 설정)
+  `global.yaml` (Versioning을 위한 파일)
+  `test_from_pretrained.ipynb` 또는 `test_layer_deletion.ipynb` (2번째 지표를 얻어내기 위한 코드)
+  `test_case.csv` (2번째 지표를 판별하는데 사용되는 test case가 들어있는 csv입니다.)
 
-```python
-tokenizer = AutoTokenizer.from_pretrained('bert-base-multilingual-cased')
-model = BertForMaskedLM.from_pretrained('bert-base-multilingual-cased')
-```
+### 5. 실험 계획 Sheet 작성 및 이를 바탕으로 Experiment 배분 (Experiment)
 
-모델의 fine-tuning 은 필요없지만, 본 프로젝트에서 주로 다룰 문장은 공고와 사용자 질의, 구직 관련 키워드에 한정되어 있으므로, 모델의 성능을 향상시키기 위해서는 domain-adaptation 과정이 필요하다는 의견이 제기되었습니다. Domain-adaptation 을 위해서는 BERT 모델의 훈련 방법으로 알려져 있는 Masked language modeling(MLM) 방식과 Next sentence prediction(NSP) 방식의 훈련이 필요하며, 훈련에 사용하는 데이터는 수집한 공고 문장 데이터를 그대로 활용 가능하므로 별도의 라벨링 작업은 필요하지 않습니다.
-
-Baselines 폴더의 Bert_embedding.ipynb 파일에는 Hugging face 에서 MLM 용 모델을 불러와, 보유한 데이터로 MLM 학습시키는 코드가 작성되어 있으며, 학습한 모델을 활용하여 주어진 문장으로부터 encoded vector 를 추출하는 코드가 작성되어 있습니다.
+- 팀원 각각이 어떤 실험을 진행할지 실험 계획 Sheet를 작성합니다.
+- 작성된 계획 Sheet를 바탕으로 실험을 진행합니다.
+- 실험은 experiment 폴더 내에 생성된 각 팀원 폴더에서 실험이 진행됩니다.
+- baseline 폴더에 있는 모델을 그대로 가져온 뒤, 실험 계획 Sheet에 나온대로 config파일을 수정한 뒤 모델 학습을 수행합니다.
 
 ## JDfeature
 
