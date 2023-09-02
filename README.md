@@ -1,4 +1,6 @@
-# AI Infra
+# PolarStar AI Infra
+
+[북극성 통합 repository 바로가기](https://github.com/KDT-AiVENGERS/.github/tree/develop/profile/polarstar)
 
 ## ❗️ About AiVENGERS Infra Repository
 
