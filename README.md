@@ -51,32 +51,32 @@ Infra Repository는 아래와 같은 개발환경을 목표로 개발되었습�
 - 모델 실험 시 코드 수정을 최소화하도록 하여 발생할 수 있는 오류의 경우의 수를 최소화합니다.
 - 모델 실행 코드와 실험 Configuration을 완전히 분리하여 실험을 용이하게 합니다.
 
-### 3. 실험 결과 자동 Logging
+### 3. 실험 결과 자동 Logging📌
 
 - 모델 실험 시 해당 실험이 어떤 Configuration에서 수행되었는지를 자동으로 기록할 수 있게 코드를 구성합니다.
 - 실험이 진행되는 동안, 실험이 종료되었을 때 실험 결과 및 현황을 즉각 시각화하여 인사이트를 얻을 수 있도록 코드를 구성합니다.
 
-### 4. 작업 단위 별로 Module 화
+### 4. 작업 단위 별로 Module 화📌
 
 - 각 작업 단위별로 모듈화하고 코드 간 상호 종속성을 최소화 시키도록 코드를 구성하여 Test 및 Refactoring, 코드의 일부 변형이 용이하도록 합니다.
 - 여건이 허락한다면 TDD를 적용하여 각 모듈별로 독립적인 TestCase를 통과하는지 여부를 테스트하여 코드 테스트를 용이하게 합니다. (추후 계획 중)
 - 모듈을 마치 레고 조립하듯이 조립하여 활용할 수 있게 구성하여 실험 시 코드를 쉽게 구성할 수 있도록 설계합니다.
 
-### 5. 협업에 용이하도록 모듈 구성
+### 5. 협업에 용이하도록 모듈 구성📌
 
 - 협업에 용이할 수 있도록 모듈 및 프로젝트 구조를 설계합니다.
 - 협업한 결과를 쉽게 비교분석할 수 있도록 코드를 구성합니다.
 
-### 6. 그 외 추가적인 편의 기능 반영 및 확장성 확보
+### 6. 그 외 추가적인 편의 기능 반영 및 확장성 확보📌
 
 - Pytorch의 device Setting 하는 부분 등 부수적인 것은 자동화되어 돌아갈 수 있도록 설계합니다.
 - Sweeping 자동화 및 시각화 등의 추가 기능을 반영합니다.
 
-### 7. Baseline 자동 생성 코드 (추후 계획 중)
+### 7. Baseline 자동 생성 코드 (추후 계획 중)📌
 
 - 규격화된 코드, TDD 기반의 모듈화된 코드인 점을 활용하여 Baseline을 자동 생성하고, 모델 수정 시 TDD의 TestCase를 통과하는지 여부를 통해 코드를 쉽게 테스트하고 변형 및 재사용 할 수 있게끔 코드를 구성합니다.
 
-### 8. 함수형 프로그래밍적 설계 요소 반영 (추후 리팩토링 계획 중)
+### 8. 함수형 프로그래밍적 설계 요소 반영 (추후 리팩토링 계획 중)📌
 
 - 비순수함수의 비중을 최대한 줄이고, 순수함수의 비중을 높여서 코드 관리를 용이하게끔 합니다.
 - 비순수함수 내에서 최대한 순수함수 적인 요소는 함수를 분리하여 설계합니다.
@@ -88,7 +88,7 @@ Infra Repository는 아래와 같은 개발환경을 목표로 개발되었습�
 
 ## ⚒️ 활용된 라이브러리 및 선정 이유
 
-### 1. Pytorch Lightning
+### 1. Pytorch Lightning📌
 
 Pytorch Lightning은 AI Model 코드를 규격화하고, 이를 활용한 다양한 편의 기능과 Model Lifecycle 관리를 도와주는 라이브러리입니다. 선정 이유는 아래와 같습니다.
 
@@ -97,14 +97,14 @@ Pytorch Lightning은 AI Model 코드를 규격화하고, 이를 활용한 다양
 - Data Module, Model Module, Task Module, Training Module, Inference Module로 분리하기 용이하다는 점에서 4번 목표에 잘 부합하여 선정하였습니다.
 - Device를 자동으로 Setting하는 기능 등 다양한 편의 기능을 제공한다는 점에서 6번 목표에 잘 부합하여 선정하였습니다.
 
-### 2. Hydra
+### 2. Hydra📌
 
 Hydra는 실험에 관련된 Configutration 파일을 코드로부터 분리할 수 있고 py파일에서 작업 시에는 다양한 plugin도 활용할 수 있도록 하는 라이브러리입니다. 선정 이유는 아래와 같습니다.
 
 - Configuration 파일을 분리하여 실험 시 코드 수정을 최소화할 수 있다는 점에서 2번 목표에 부합하여 선정하였습니다.
 - Configuration 파일로 실험 내역이 자동 저장되도록 설계가 가능하다는 점에서 3번 목표에 부합하고 파일 형태이므로 공유가 용이하다는 점에서 5번 목표에 부합하여 선정하였습니다.
 
-### 3. Wandb
+### 3. Wandb📌
 
 Wandb는 실험 결과를 시각화하여 클라우드에 저장하고 대시보드로 쉽게 확인할 수 있는 환경을 제공하며, 협업 시 서로 다른 실험 간의 결과를 쉽게 비교 및 시각화할 수 있는 툴입니다. 더불어 자동 Sweeping 기능도 제공하고 결과도 시각적으로 확인할 수 있습니다.
 
@@ -112,7 +112,7 @@ Wandb는 실험 결과를 시각화하여 클라우드에 저장하고 대시보
 - 서로 다른 컴퓨터의 실험 결과를 한 대시보드에서 비교 분석하기 매우 쉬운 환경을 제공하기 때문에 5번 목표에 잘 부합하여 선정하였습니다.
 - Sweeping 자동화를 지원하며 이 결과를 시각화까지 해준다는 점에서 6번 목표에 잘 부합하여 선정하였습니다.
 
-### 4. Transformers - HuggingFace
+### 4. Transformers - HuggingFace📌
 
 Transformers 라이브러리는 HuggingFace Repository에 올라와 있는 모델을 쉽게 가져와서 사용할 수 있고 finetuning 등의 작업도 용이하게 할 수 있는 라이브러리입니다.
 
@@ -129,7 +129,7 @@ Infra 저장소는 북극성 프로젝트를 위한 모델을 개발하고 테�
 
 Infra를 북극성 Project에 적용한 과정은 아래와 같습니다.
 
-### 1. Infra Repository 기반의 코드 작성 (Infra_Init)
+### 1. Infra Repository 기반의 코드 작성 (Infra_Init)📌
 
 본격적으로 저희 프로젝트에 적용할 Infra Code를 작성하는 단계입니다.
 
@@ -145,7 +145,7 @@ Infra를 북극성 Project에 적용한 과정은 아래와 같습니다.
 - 그 다음, 이 Infra Code를 자연어 처리 문제에 적용할 수 있도록, 기존에 해결했던 자연어 처리 Task 코드를 가져와 일부 리팩토링합니다.
   `infra_init/nlp_baseline.ipynb`
 
-### 2. 프로젝트에 사용될 모델 관련 분석 및 코드 작성 (Model_Analysis)
+### 2. 프로젝트에 사용될 모델 관련 분석 및 코드 작성 (Model_Analysis)📌
 
 북극성 프로젝트의 서비스 중 공고 추천 서비스의 구현 방법을 고민해보았습니다. 저희가 결정한 방법은 사용자에게 QnA를 통해 얻어낸 데이터를 활용해 가상의 Job Description인 Mock JD를 만든 뒤, 이 Mock JD를 바탕으로 임베딩 벡터를 뽑아내어, 이 Mock JD와 가장 유사한 임베딩 벡터 값을 가진 JD를 찾아 출력해주는 방식으로 작동 방식을 결정하였습니다.
 
@@ -174,7 +174,7 @@ model = BertForMaskedLM.from_pretrained('bert-base-multilingual-cased')
 - BERT 모델에서 나온 결과를 바탕으로 Cosine Similarity를 계산하는 코드를 작성합니다.
   `model_analysis/Bert_cosine_cal.ipynb`
 
-### 3. 모델 성능 비교 테스트 전략 설정
+### 3. 모델 성능 비교 테스트 전략 설정📌
 
 - 모델의 성능을 평가하기 위해 2가지 지표를 사용합니다.
 - 첫 번째 지표는 model 학습과정에서의 loss 값입니다. 이 값은 작을수록 좋은 모델로 판별합니다.
@@ -182,7 +182,7 @@ model = BertForMaskedLM.from_pretrained('bert-base-multilingual-cased')
 - 두 번째 지표는 TestSheet Score입니다. 유사도가 높게 측정되어야 하는 예시 Set와 유사도가 낮게 측정되어야 하는 예시 Set를 모델에 입력하여 우리가 예상한 유사도대로 잘 나오는지 판별하는 지표입니다.
 - 두 번째 지표는 TestSheet Score를 계산해주는 코드를 작성하여 그 결과를 비교분석할 수 있습니다.
 
-### 4. 최종 실험용 Baseline Model을 작성 (Baseline)
+### 4. 최종 실험용 Baseline Model을 작성 (Baseline)📌
 
 - 위에서 분석된 결과를 바탕으로 최종 Baseline Model을 작성합니다.
 - Pretrained된 모델을 실제 서비스에 적용되는 모델 구조로 이식할 때 2가지 방법을 고안했습니다.
@@ -196,22 +196,35 @@ model = BertForMaskedLM.from_pretrained('bert-base-multilingual-cased')
   `test_from_pretrained.ipynb` 또는 `test_layer_deletion.ipynb` (2번째 지표를 얻어내기 위한 코드)
   `test_case.csv` (2번째 지표를 판별하는데 사용되는 test case가 들어있는 csv입니다.)
 
-### 5. 실험 계획 Sheet 작성 및 이를 바탕으로 Experiment 배분 (Experiment)
+### 5. 실험 계획 Sheet 작성 및 이를 바탕으로 Experiment 배분 (Experiment)📌
 
 - 팀원 각각이 어떤 실험을 진행할지 실험 계획 Sheet를 작성합니다.
 - 작성된 계획 Sheet를 바탕으로 실험을 진행합니다.
 - 실험은 experiment 폴더 내에 생성된 각 팀원 폴더에서 실험이 진행됩니다.
 - baseline 폴더에 있는 모델을 그대로 가져온 뒤, 실험 계획 Sheet에 나온대로 config파일을 수정한 뒤 모델 학습을 수행합니다.
 
-## JDfeature
+### 6. Data Processing Code (DataProcessing)
 
-## sampleJD
+북극성 프로젝트의 기본 로직은 아래와 같습니다.
 
-실험을 진행한 모델의 성능을 비교해 보기 위해 미리 분류 해놓은 sample data를 기반으로 cosine 유사도를 계산한 csv파일을 생성하고 각 모델의 loss값을 계산하여 best모델을 선정하였습니다.
+1. 사용자와 Q&A 를 주고 받으며 사용자에 대한 정보를 수집합니다.
+2. 얻어진 Q&A를 바탕으로 가상의 Mock JD를 얻어냅니다.
+3. Mock JD를 BERT 모델을 활용하여 Embedding Vector로 변환합니다.
+4. 이 Embedding Vector와 Cosine 유사도가 높은 JD 목록을 얻어냅니다.
+5. 이 중 하나의 JD를 선택하여 강의 추천을 요청하면 해당 JD를 바탕으로 겹치는 키워드를 이용하는 알고리즘을 이용해 적절한 강의를 추천합니다.
 
-### mockJD
+Data Processing 폴더 내에 있는 폴더 중
+JD_feature 폴더는 2번 과정, Lec_recommendlogic 폴더는 5번 과정을 구현한 코드입니다.
 
-질문을 통해 사용자에게 입력받은 내용을 기반으로 가상의 JD파일을 만들고 이 가상의 JD와 코사인 유사도를 통해 공고를 추천 해줍니다.
+### JD_feature📌
 
-- 알고리즘 폴더
-  [https://github.com/KDT-AiVENGERS/AIInfra/tree/develop/LEC_recommendlogic](https://github.com/KDT-AiVENGERS/AIInfra/tree/develop/LEC_recommendlogic)
+- QnA 데이터를 바탕으로 가상 JD를 생성하는 코드가 구현되어 있습니다.
+- 더불어 TestSheet를 작성하기 위한 코드도 여기에 구현되어 있습니다.
+- 즉 Sample JD와 유사도를 비교하는 코드가 구현되어 있습니다.
+
+### LEC_recommend_logic📌
+
+- JD가 입력으로 들어오면 이와 관련도가 높은 강의를 추천해주는 코드가 구현되어 있습니다.
+- 키워드가 매칭되는지 확인하는 방법으로 알고리즘을 구현했습니다.
+
+[Data Processing에 대한 자세한 설명을 확인하려면 여기를 눌러주세요.](https://github.com/KDT-AiVENGERS/PolarStar_Data)
