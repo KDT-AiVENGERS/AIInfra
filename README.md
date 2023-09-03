@@ -8,6 +8,15 @@
 
 ### "인공지능 모델을 효과적으로 개발하고 테스트" 하기 위해 만들어졌습니다.
 
+
+![aiinfra_diagram](https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/3bdcd842-cbf8-4a31-926d-77b619284f4e)
+<p align="center"><i>
+PolarStar_AIInfra 전체 다이어그램
+</i>
+</p>
+
+
+
 <br />
 
 백엔드 개발에서 서버실 → IDC → 클라우드 서비스로 넘어오면서
@@ -90,21 +99,56 @@ Infra Repository는 아래와 같은 개발환경을 목표로 개발되었습�
 
 ### 1. Pytorch Lightning📌
 
+![image](https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/4dc0e03d-9249-4948-b4e3-fdc6c2981dbf)
+
+
+
 Pytorch Lightning은 AI Model 코드를 규격화하고, 이를 활용한 다양한 편의 기능과 Model Lifecycle 관리를 도와주는 라이브러리입니다. 선정 이유는 아래와 같습니다.
 
 - 코드를 규격화 할 수 있다는 1번 목표, 7번 목표에 잘 부합하여 선정하였습니다.
 - 실험 결과를 Wandb와 연동 시 wandblogger를 지원한다는 점에서 3번 목표, 5번 목표에 잘 부합하여 선정하였습니다.
 - Data Module, Model Module, Task Module, Training Module, Inference Module로 분리하기 용이하다는 점에서 4번 목표에 잘 부합하여 선정하였습니다.
 - Device를 자동으로 Setting하는 기능 등 다양한 편의 기능을 제공한다는 점에서 6번 목표에 잘 부합하여 선정하였습니다.
+<p align="center">
+<img width="600" alt="pytorchLightningCode" src="https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/d17792e6-418c-46c9-b035-6e6047dcecb4">
+</p>
+<p align="center"><i>
+위의 그림과 같이 정해진 이름의 함수를 구현하는 방식을 사용하여 규격화된 코드를 구현할 수 있습니다.
+</i> 
+ </p>
+
 
 ### 2. Hydra📌
+
+<p align="center">
+<img width="600" alt="Hydra" src="https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/67f9b795-ba76-4bc3-b29f-2a228264e2da">
+</p>
+
+
+
 
 Hydra는 실험에 관련된 Configutration 파일을 코드로부터 분리할 수 있고 py파일에서 작업 시에는 다양한 plugin도 활용할 수 있도록 하는 라이브러리입니다. 선정 이유는 아래와 같습니다.
 
 - Configuration 파일을 분리하여 실험 시 코드 수정을 최소화할 수 있다는 점에서 2번 목표에 부합하여 선정하였습니다.
 - Configuration 파일로 실험 내역이 자동 저장되도록 설계가 가능하다는 점에서 3번 목표에 부합하고 파일 형태이므로 공유가 용이하다는 점에서 5번 목표에 부합하여 선정하였습니다.
+<p align="center">
+<img width="678" alt="Configuration file" src="https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/d93206d5-b5be-4e72-b8c4-67514b9bf7b6">
+</p>
+<p align="center"><i>
+위의 그림과 같이 Config.yaml 파일에서 실험에 관련된 여러 설정을 세팅할 수 있습니다. <br /> 즉 코드를 전혀 만질 필요없이 이 파일만 건드리면 됩니다.
+</i>
+</p>
+
+
+
 
 ### 3. Wandb📌
+
+<p align="center">
+<img width="600" alt="wandb" src="https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/485a40a0-90de-4a93-8c99-366a3679a945">
+</p>
+
+
 
 Wandb는 실험 결과를 시각화하여 클라우드에 저장하고 대시보드로 쉽게 확인할 수 있는 환경을 제공하며, 협업 시 서로 다른 실험 간의 결과를 쉽게 비교 및 시각화할 수 있는 툴입니다. 더불어 자동 Sweeping 기능도 제공하고 결과도 시각적으로 확인할 수 있습니다.
 
@@ -112,12 +156,33 @@ Wandb는 실험 결과를 시각화하여 클라우드에 저장하고 대시보
 - 서로 다른 컴퓨터의 실험 결과를 한 대시보드에서 비교 분석하기 매우 쉬운 환경을 제공하기 때문에 5번 목표에 잘 부합하여 선정하였습니다.
 - Sweeping 자동화를 지원하며 이 결과를 시각화까지 해준다는 점에서 6번 목표에 잘 부합하여 선정하였습니다.
 
+<p align="center">
+<img width="1725" alt="wandb dashboard" src="https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/38aa9f44-2e81-4820-8a33-082223438e54">
+
+<p align="center"><i>
+위의 그림과 같이 WandB Dashboard를 이용해 결과를 시각화할 수 있고 <br />이 결과를 팀원과 공유할 수 있습니다.</i>
+</p>
+
+
 ### 4. Transformers - HuggingFace📌
+
+<p align="center">
+<img width="600" alt="transformers" src="https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/88bc9608-3a31-4aa2-8e54-de73ddcffd03">
+</p>
+
 
 Transformers 라이브러리는 HuggingFace Repository에 올라와 있는 모델을 쉽게 가져와서 사용할 수 있고 finetuning 등의 작업도 용이하게 할 수 있는 라이브러리입니다.
 
 - 주요한 모델을 쉽게 가져올 수 있고 HuggingFace에 올라와있는 주요 pretrained 모델을 활용하기 위해 선정했습니다.
 - Repository를 활용하면 서로 다른 컴퓨터에서의 모델 결과 값을 쉽게 불러올 수 있다는 점에서 5번 목표에 잘 부합하여 선정하였습니다.
+
+<p align="center">
+<img width="1554" alt="huggingface repository" src="https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/694e59bd-8eb3-4024-8e6e-862bb90b961a">
+</p>
+<p align="center"><i>
+위의 그림과 같이 모델 Config와 Weight값을 HuggingFace Repository에 저장하고<br />이것을 코드 한 줄로 쉽게 불러올 수 있습니다.</i>
+</p>
+
 
 Infra Model의 구체적인 구조와 사용 방법은 Wiki 를 참고해주세요.
 
@@ -203,7 +268,7 @@ model = BertForMaskedLM.from_pretrained('bert-base-multilingual-cased')
 - 실험은 experiment 폴더 내에 생성된 각 팀원 폴더에서 실험이 진행됩니다.
 - baseline 폴더에 있는 모델을 그대로 가져온 뒤, 실험 계획 Sheet에 나온대로 config파일을 수정한 뒤 모델 학습을 수행합니다.
 
-### 6. Data Processing Code (DataProcessing)
+## 📁Data Processing Code (DataProcessing)
 
 북극성 프로젝트의 기본 로직은 아래와 같습니다.
 
