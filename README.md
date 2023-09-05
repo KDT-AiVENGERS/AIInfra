@@ -8,14 +8,12 @@
 
 ### "인공지능 모델을 효과적으로 개발하고 테스트" 하기 위해 만들어졌습니다.
 
-
 ![aiinfra_diagram](https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/3bdcd842-cbf8-4a31-926d-77b619284f4e)
+
 <p align="center"><i>
 PolarStar_AIInfra 전체 다이어그램
 </i>
 </p>
-
-
 
 <br />
 
@@ -101,8 +99,6 @@ Infra Repository는 아래와 같은 개발환경을 목표로 개발되었습�
 
 ![image](https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/4dc0e03d-9249-4948-b4e3-fdc6c2981dbf)
 
-
-
 Pytorch Lightning은 AI Model 코드를 규격화하고, 이를 활용한 다양한 편의 기능과 Model Lifecycle 관리를 도와주는 라이브러리입니다. 선정 이유는 아래와 같습니다.
 
 - 코드를 규격화 할 수 있다는 1번 목표, 7번 목표에 잘 부합하여 선정하였습니다.
@@ -117,15 +113,11 @@ Pytorch Lightning은 AI Model 코드를 규격화하고, 이를 활용한 다양
 </i> 
  </p>
 
-
 ### 2. Hydra📌
 
 <p align="center">
 <img width="600" alt="Hydra" src="https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/67f9b795-ba76-4bc3-b29f-2a228264e2da">
 </p>
-
-
-
 
 Hydra는 실험에 관련된 Configutration 파일을 코드로부터 분리할 수 있고 py파일에서 작업 시에는 다양한 plugin도 활용할 수 있도록 하는 라이브러리입니다. 선정 이유는 아래와 같습니다.
 
@@ -139,16 +131,11 @@ Hydra는 실험에 관련된 Configutration 파일을 코드로부터 분리할 
 </i>
 </p>
 
-
-
-
 ### 3. Wandb📌
 
 <p align="center">
 <img width="600" alt="wandb" src="https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/485a40a0-90de-4a93-8c99-366a3679a945">
 </p>
-
-
 
 Wandb는 실험 결과를 시각화하여 클라우드에 저장하고 대시보드로 쉽게 확인할 수 있는 환경을 제공하며, 협업 시 서로 다른 실험 간의 결과를 쉽게 비교 및 시각화할 수 있는 툴입니다. 더불어 자동 Sweeping 기능도 제공하고 결과도 시각적으로 확인할 수 있습니다.
 
@@ -163,13 +150,11 @@ Wandb는 실험 결과를 시각화하여 클라우드에 저장하고 대시보
 위의 그림과 같이 WandB Dashboard를 이용해 결과를 시각화할 수 있고 <br />이 결과를 팀원과 공유할 수 있습니다.</i>
 </p>
 
-
 ### 4. Transformers - HuggingFace📌
 
 <p align="center">
 <img width="600" alt="transformers" src="https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/88bc9608-3a31-4aa2-8e54-de73ddcffd03">
 </p>
-
 
 Transformers 라이브러리는 HuggingFace Repository에 올라와 있는 모델을 쉽게 가져와서 사용할 수 있고 finetuning 등의 작업도 용이하게 할 수 있는 라이브러리입니다.
 
@@ -182,7 +167,6 @@ Transformers 라이브러리는 HuggingFace Repository에 올라와 있는 모�
 <p align="center"><i>
 위의 그림과 같이 모델 Config와 Weight값을 HuggingFace Repository에 저장하고<br />이것을 코드 한 줄로 쉽게 불러올 수 있습니다.</i>
 </p>
-
 
 Infra Model의 구체적인 구조와 사용 방법은 Wiki 를 참고해주세요.
 
@@ -293,3 +277,9 @@ JD_feature 폴더는 2번 과정, Lec_recommendlogic 폴더는 5번 과정을 �
 - 키워드가 매칭되는지 확인하는 방법으로 알고리즘을 구현했습니다.
 
 [Data Processing에 대한 자세한 설명을 확인하려면 여기를 눌러주세요.](https://github.com/KDT-AiVENGERS/PolarStar_Data)
+
+## Retrospection📌
+
+- 인공지능 모델 코드는 대체적으로 비슷한 형태를 따른다. 실제로 Kaggle 등을 진행할 때 이전에 사용했던 코드를 복사해서 붙여넣기해서 코드를 변경하는 일이 잦을 정도로 굉장히 그 형식이 유사하다. 즉 코드의 재사용성이 높으므로 이를 모듈화할 수 있을 것이라는 생각을 하였고 그것을 프로젝트에 적용하여 꽤 만족스러운 성과를 가져왔다는 것이 인상 깊었다.
+- kaggle 환경에서 사용할 수 있는 버전으로 테스트를 해보지 못했다. 사실 빠르게 모델 baseline을 코드를 생성하고 테스트해 볼 때 GPU가 없다면 Kaggle 환경에 대한 호환성이 필요한데 아직 이 부분을 제작해보지 못한 것이 아쉽다.
+- 모듈화가 되었으므로 코드 자동 생성 코드도 만들어보고 싶었으나, 프로젝트 기간 동안에는 완성하지 못했다. 그러나 이는 향후 재사용 가능성이 높은 코드이므로 코드 자동 생성 코드도 구현해보고자 한다.
