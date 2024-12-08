@@ -2,7 +2,7 @@
 
 [북극성 서비스 정보 바로가기](https://github.com/KDT-AiVENGERS/PolarStar_Info)
 
-## ❗️ About AiVENGERS Infra Repository
+# ❗️ About AiVENGERS Infra Repository
 
 ### Infra Repository는 AiVENGERS의 북극성 프로젝트에서 시작되었으며,
 
@@ -17,41 +17,25 @@ PolarStar_AIInfra 전체 다이어그램
 
 <br />
 
-백엔드 개발에서 서버실 → IDC → 클라우드 서비스로 넘어오면서
+Data Team이 빠르게 데이터를 수집하는 동안
 
-개발자들은 부수적인 것을 관리하는 시간을 줄이고
+Infra 팀은 얻어진 데이터를 바탕으로 바로바로 다양한 모델을 빠르게 실험해볼 수 있도록
 
-오로지, 개발과 서비스에 집중할 수 있는 환경을 만들어왔습니다.
+실험 인프라를 구축하였습니다. 
 
-그리고 이것은 큰 생산성과 효율성의 증대로 이어졌습니다.
 
-<br />
+정해진 규격 형태로 Configuration과 코드 파일을 적절히 배치하고 
+돌리기만 하면 
 
-인공지능 개발에서도, 인공지능 개발자가 서비스에 적합한 모델을 선정하고
+학습과 평가가 수행되며, 그 결과를 WandB에서 바로 확인해볼 수 있습니다.
 
-이를 비교 평가 및 분석하고 인사이트를 얻는데에 집중할 수 있는 개발 환경 및 인프라가 갖추어져 있으면
-
-참 좋을 것 같다고 생각하였습니다.
-
-<br />
-
-코드에서 발생하는 부수적인 문제에 신경쓰는 시간을 최소화하고
-
-생각을 즉각적으로 코드로 구현하고 즉각적으로 확인 및 분석하에
-
-빠르고 효과적인 인공지능 개발 환경을 만들어 낼 수 있도록 인프라를 구축하였습니다.
-
-이 레포지토리에서는 위와 같은 실험 Infra 코드와 이를 북극성 프로젝트에 적용한 코드를 담고 있습니다.
-
-Infra Repository는 아래와 같은 개발환경을 목표로 개발되었습니다.
-
-## 🧑🏻‍💻 개발 목표 및 방향성
+# 🧑🏻‍💻 개발 목표 및 방향성
 
 ### 1. 규격화된 코드📌
 
 - 코드 작성 방식을 일관화하여, 처음 코드를 읽는 사람이 이해하기 쉽도록 설계합니다.
 - 규격화된 코드를 이용해 코드의 재사용성을 높입니다.
-- 코드가 규격화되어 있다는 점을 이용해 실험을 시작할 때 자동으로 코드를 생성할 수 있게 설계합니다.
+- 코드가 규격화되어 있다는 점을 이용해 실험을 시작할 때 자동으로 코드를 생성할 수 있게 설계합니다. (실제로 수행하지는 못함)
 
 ### 2. 실험 시 코드 수정 최소화📌
 
@@ -66,7 +50,6 @@ Infra Repository는 아래와 같은 개발환경을 목표로 개발되었습�
 ### 4. 작업 단위 별로 Module 화📌
 
 - 각 작업 단위별로 모듈화하고 코드 간 상호 종속성을 최소화 시키도록 코드를 구성하여 Test 및 Refactoring, 코드의 일부 변형이 용이하도록 합니다.
-- 여건이 허락한다면 TDD를 적용하여 각 모듈별로 독립적인 TestCase를 통과하는지 여부를 테스트하여 코드 테스트를 용이하게 합니다. (추후 계획 중)
 - 모듈을 마치 레고 조립하듯이 조립하여 활용할 수 있게 구성하여 실험 시 코드를 쉽게 구성할 수 있도록 설계합니다.
 
 ### 5. 협업에 용이하도록 모듈 구성📌
@@ -85,15 +68,15 @@ Infra Repository는 아래와 같은 개발환경을 목표로 개발되었습�
 
 저희는 아래와 같은 프레임워크 및 라이브러리를 활용하였습니다.
 
-## ⚒️ 활용된 라이브러리 및 선정 이유
+# ⚒️ 활용된 라이브러리 및 선정 이유
 
-### 1. Pytorch Lightning📌
+## 1. Pytorch Lightning📌
 
 ![image](https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/4dc0e03d-9249-4948-b4e3-fdc6c2981dbf)
 
 Pytorch Lightning은 AI Model 코드를 규격화하고, 이를 활용한 다양한 편의 기능과 Model Lifecycle 관리를 도와주는 라이브러리입니다. 선정 이유는 아래와 같습니다.
 
-- 코드를 규격화 할 수 있다는 1번 목표, 7번 목표에 잘 부합하여 선정하였습니다.
+- 코드를 규격화 할 수 있다는 1번 목표에 잘 부합하여 선정하였습니다.
 - 실험 결과를 Wandb와 연동 시 wandblogger를 지원한다는 점에서 3번 목표, 5번 목표에 잘 부합하여 선정하였습니다.
 - Data Module, Model Module, Task Module, Training Module, Inference Module로 분리하기 용이하다는 점에서 4번 목표에 잘 부합하여 선정하였습니다.
 - Device를 자동으로 Setting하는 기능 등 다양한 편의 기능을 제공한다는 점에서 6번 목표에 잘 부합하여 선정하였습니다.
@@ -105,7 +88,7 @@ Pytorch Lightning은 AI Model 코드를 규격화하고, 이를 활용한 다양
 </i> 
  </p>
 
-### 2. Hydra📌
+## 2. Hydra📌
 
 <p align="center">
 <img width="600" alt="Hydra" src="https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/67f9b795-ba76-4bc3-b29f-2a228264e2da">
@@ -123,7 +106,7 @@ Hydra는 실험에 관련된 Configutration 파일을 코드로부터 분리할 
 </i>
 </p>
 
-### 3. Wandb📌
+## 3. Wandb📌
 
 <p align="center">
 <img width="600" alt="wandb" src="https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/485a40a0-90de-4a93-8c99-366a3679a945">
@@ -136,13 +119,13 @@ Wandb는 실험 결과를 시각화하여 클라우드에 저장하고 대시보
 - Sweeping 자동화를 지원하며 이 결과를 시각화까지 해준다는 점에서 6번 목표에 잘 부합하여 선정하였습니다.
 
 <p align="center">
-<img width="1725" alt="wandb dashboard" src="https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/38aa9f44-2e81-4820-8a33-082223438e54">
+<img width="1725" alt="wandb dashboard" src="https://github.com/user-attachments/assets/6bcf5595-a29c-4259-bdae-399774978198">
 
 <p align="center"><i>
 위의 그림과 같이 WandB Dashboard를 이용해 결과를 시각화할 수 있고 <br />이 결과를 팀원과 공유할 수 있습니다.</i>
 </p>
 
-### 4. Transformers - HuggingFace📌
+## 4. Transformers - HuggingFace📌
 
 <p align="center">
 <img width="600" alt="transformers" src="https://github.com/KDT-AiVENGERS/AIInfra/assets/60493070/88bc9608-3a31-4aa2-8e54-de73ddcffd03">
@@ -162,15 +145,9 @@ Transformers 라이브러리는 HuggingFace Repository에 올라와 있는 모�
 
 Infra Model의 구체적인 구조와 사용 방법은 Wiki 를 참고해주세요.
 
-## 🐻‍❄️ Infra를 북극성 Project에 적용
+# 🐻‍❄️ Infra를 프로젝트에 적용한 방법
 
-Infra 저장소는 북극성 프로젝트를 위한 모델을 개발하고 테스트하기 위한 목적으로 만들어졌습니다. 효율적인 인공지능 모델 개발을 위해 개발 코드를 규격화하였으며, 팀원들이 각각 새로운 모델이나 학습 방식을 도입하였을 경우 그 결과를 한 데 모아 비교할 수 있도록 시각화하였습니다.
-
-저희 AiVENGERS Team은 이렇게 구현한 Infra를 바탕으로 북극성 프로젝트에 사용될 인공지능 모델을 실험하고 튜닝하고 인사이트를 얻어 최적화된 최종 모델을 얻어내는 과정에서 적극적으로 활용했습니다.
-
-Infra를 북극성 Project에 적용한 과정은 아래와 같습니다.
-
-### 1. Infra Repository 기반의 코드 작성 (Infra_Init)📌
+## 1. Infra Repository 기반의 코드 작성 (Infra_Init)📌
 
 본격적으로 저희 프로젝트에 적용할 Infra Code를 작성하는 단계입니다.
 
@@ -186,7 +163,7 @@ Infra를 북극성 Project에 적용한 과정은 아래와 같습니다.
 - 그 다음, 이 Infra Code를 자연어 처리 문제에 적용할 수 있도록, 기존에 해결했던 자연어 처리 Task 코드를 가져와 일부 리팩토링합니다.
   `infra_init/nlp_baseline.ipynb`
 
-### 2. 프로젝트에 사용될 모델 관련 분석 및 코드 작성 (Model_Analysis)📌
+## 2. 프로젝트에 사용될 모델 관련 분석 및 코드 작성 (Model_Analysis)📌
 
 북극성 프로젝트의 서비스 중 공고 추천 서비스의 구현 방법을 고민해보았습니다. 저희가 결정한 방법은 사용자에게 QnA를 통해 얻어낸 데이터를 활용해 가상의 Job Description인 Mock JD를 만든 뒤, 이 Mock JD를 바탕으로 임베딩 벡터를 뽑아내어, 이 Mock JD와 가장 유사한 임베딩 벡터 값을 가진 JD를 찾아 출력해주는 방식으로 작동 방식을 결정하였습니다.
 
@@ -215,7 +192,7 @@ model = BertForMaskedLM.from_pretrained('bert-base-multilingual-cased')
 - BERT 모델에서 나온 결과를 바탕으로 Cosine Similarity를 계산하는 코드를 작성합니다.
   `model_analysis/Bert_cosine_cal.ipynb`
 
-### 3. 모델 성능 비교 테스트 전략 설정📌
+## 3. 모델 성능 비교 테스트 전략 설정📌
 
 - 모델의 성능을 평가하기 위해 2가지 지표를 사용합니다.
 - 첫 번째 지표는 model 학습과정에서의 loss 값입니다. 이 값은 작을수록 좋은 모델로 판별합니다.
@@ -223,28 +200,60 @@ model = BertForMaskedLM.from_pretrained('bert-base-multilingual-cased')
 - 두 번째 지표는 TestSheet Score입니다. 유사도가 높게 측정되어야 하는 예시 Set와 유사도가 낮게 측정되어야 하는 예시 Set를 모델에 입력하여 우리가 예상한 유사도대로 잘 나오는지 판별하는 지표입니다.
 - 두 번째 지표는 TestSheet Score를 계산해주는 코드를 작성하여 그 결과를 비교분석할 수 있습니다.
 
-### 4. 최종 실험용 Baseline Model을 작성 (Baseline)📌
+## 4. 최종 실험용 Baseline Model을 작성 (Baseline)📌
 
 - 위에서 분석된 결과를 바탕으로 최종 Baseline Model을 작성합니다.
 - Pretrained된 모델을 실제 서비스에 적용되는 모델 구조로 이식할 때 2가지 방법을 고안했습니다.
-  `new_prediction_layer_deletion 방식`
-  `new_prediction_from_pretrained 방식`
-  > 자세한 설명 보기 (접기 이용, 아래에 상세 설명)
-- 구성된 Baseline Model 코드 파일들의 구성은 아래와 같습니다.
-  `train_from_pretrained.ipynb` 또는 `train_layer_deletion.ipynb` (최종 모델 학습 코드)
-  `config.yaml` (실험 설정)
-  `global.yaml` (Versioning을 위한 파일)
-  `test_from_pretrained.ipynb` 또는 `test_layer_deletion.ipynb` (2번째 지표를 얻어내기 위한 코드)
-  `test_case.csv` (2번째 지표를 판별하는데 사용되는 test case가 들어있는 csv입니다.)
+  - `new_prediction_layer_deletion 방식` 
+  - `new_prediction_from_pretrained 방식`
 
-### 5. 실험 계획 Sheet 작성 및 이를 바탕으로 Experiment 배분 (Experiment)📌
+  <br/>
+  <br/>
+  <details>
+  <summary>두 방식의 차이</summary>
+
+  Test / Prediction 과정에서
+  ### Layer Deletion Code
+  ```python
+  pooler_before_outputs = outputs[0][0]
+  pooler_outputs = torch.nn.functional.tanh(pooler_before_outputs)
+  ```
+
+  -> BERT의 Pooler Layer 삭제 (MLM 과정에서 학습되지 않는 레이어, NSP 과정에서만 학습 - 어차피 문장의 대표 뜻만 알아내면 되고, 파인튜닝에 쓰이지도 않음 - 의미 없는 레이어다! 라는 가정)
+
+  ### From Pretrained Code
+  ```python
+  pooler_outputs = outputs[1]
+  ```
+
+  -> BERT의 Pooler Layer를 Pretrained Layer를 그대로 활용 (Pretrain 된 결과를 활용해 구조를 그대로 유지함)
+  
+  </details>
+  <br/>
+  <br/>
+  
+  
+  
+  
+- 구성된 Baseline Model 코드 파일들의 구성은 아래와 같습니다.
+  - `train_from_pretrained.ipynb` 또는 `train_layer_deletion.ipynb` (최종 모델 학습 코드)
+  - `config.yaml` (실험 설정)
+  - `global.yaml` (Versioning을 위한 파일)
+  - `test_from_pretrained.ipynb` 또는 `test_layer_deletion.ipynb` (2번째 지표를 얻어내기 위한 코드)
+  - `test_case.csv` (2번째 지표를 판별하는데 사용되는 test case가 들어있는 csv입니다.)
+
+## 5. 실험 계획 Sheet 작성 및 이를 바탕으로 Experiment 배분 (Experiment)📌
 
 - 팀원 각각이 어떤 실험을 진행할지 실험 계획 Sheet를 작성합니다.
 - 작성된 계획 Sheet를 바탕으로 실험을 진행합니다.
 - 실험은 experiment 폴더 내에 생성된 각 팀원 폴더에서 실험이 진행됩니다.
 - baseline 폴더에 있는 모델을 그대로 가져온 뒤, 실험 계획 Sheet에 나온대로 config파일을 수정한 뒤 모델 학습을 수행합니다.
 
-## 📁Data Processing Code (DataProcessing)
+## 6. 실험 결과 바탕으로 모델 선정
+<img width="1509" alt="image" src="https://github.com/user-attachments/assets/84681011-6bab-49a2-93b2-4df3c228ceb4">
+
+
+# 📁Data Processing Code (DataProcessing)
 
 북극성 프로젝트의 기본 로직은 아래와 같습니다.
 
@@ -257,20 +266,20 @@ model = BertForMaskedLM.from_pretrained('bert-base-multilingual-cased')
 Data Processing 폴더 내에 있는 폴더 중
 JD_feature 폴더는 2번 과정, Lec_recommendlogic 폴더는 5번 과정을 구현한 코드입니다.
 
-### JD_feature📌
+## JD_feature📌
 
 - QnA 데이터를 바탕으로 가상 JD를 생성하는 코드가 구현되어 있습니다.
 - 더불어 TestSheet를 작성하기 위한 코드도 여기에 구현되어 있습니다.
 - 즉 Sample JD와 유사도를 비교하는 코드가 구현되어 있습니다.
 
-### LEC_recommend_logic📌
+## LEC_recommend_logic📌
 
 - JD가 입력으로 들어오면 이와 관련도가 높은 강의를 추천해주는 코드가 구현되어 있습니다.
 - 키워드가 매칭되는지 확인하는 방법으로 알고리즘을 구현했습니다.
 
 [Data Processing에 대한 자세한 설명을 확인하려면 여기를 눌러주세요.](https://github.com/KDT-AiVENGERS/PolarStar_Data)
 
-## Retrospection📌
+# Retrospection📌
 
 - 인공지능 모델 코드는 대체적으로 비슷한 형태를 따른다. 실제로 Kaggle 등을 진행할 때 이전에 사용했던 코드를 복사해서 붙여넣기해서 코드를 변경하는 일이 잦을 정도로 굉장히 그 형식이 유사하다. 즉 코드의 재사용성이 높으므로 이를 모듈화할 수 있을 것이라는 생각을 하였고 그것을 프로젝트에 적용하여 꽤 만족스러운 성과를 가져왔다는 것이 인상 깊었다.
 - kaggle 환경에서 사용할 수 있는 버전으로 테스트를 해보지 못했다. 사실 빠르게 모델 baseline을 코드를 생성하고 테스트해 볼 때 GPU가 없다면 Kaggle 환경에 대한 호환성이 필요한데 아직 이 부분을 제작해보지 못한 것이 아쉽다.
