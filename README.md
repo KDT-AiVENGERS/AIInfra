@@ -143,8 +143,6 @@ Transformers 라이브러리는 HuggingFace Repository에 올라와 있는 모�
 위의 그림과 같이 모델 Config와 Weight값을 HuggingFace Repository에 저장하고<br />이것을 코드 한 줄로 쉽게 불러올 수 있습니다.</i>
 </p>
 
-Infra Model의 구체적인 구조와 사용 방법은 Wiki 를 참고해주세요.
-
 # 🐻‍❄️ Infra를 프로젝트에 적용한 방법
 
 ## 1. Infra Repository 기반의 코드 작성 (Infra_Init)📌
